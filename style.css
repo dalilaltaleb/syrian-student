@@ -1,0 +1,1187 @@
+/* ===========================
+   إعدادات عامة
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+}
+
+*{
+    font-family: "Cairo", sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F5F7FA;
+    color:#333;
+    line-height:1.7;
+}
+
+
+.dark-btn{
+    background:none;
+    border:none;
+    font-size:22px;
+    cursor:pointer;
+    color:white;
+    transition:.3s;
+}
+
+header.scrolled .dark-btn{
+    color:#2c3e50;
+}
+
+body.dark-mode{
+    background:#121212;
+    color:white;
+}
+
+body.dark-mode header{
+    background:#1e1e1e;
+}
+
+body.dark-mode .about,
+body.dark-mode .services,
+body.dark-mode .universities,
+body.dark-mode .content,
+body.dark-mode .ranking{
+    background:#1f1f1f;
+    color:white;
+}
+
+body.dark-mode .section-title{
+    color:#6cb4ff;
+}
+
+body.dark-mode p{
+    color:#ddd;
+}
+
+body.dark-mode .hero-btn2{
+    background:#333;
+    color:white;
+}
+
+
+/* ترتيب الجامعات */
+body.dark-mode .ranking,
+body.dark-mode .ranking-section,
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td{
+    background:#1f1f1f;
+    color:white;
+}
+
+body.dark-mode th{
+    background:#333;
+}
+
+body.dark-mode #contact{
+    background:#121212;
+    color:white;
+}
+
+body.dark-mode #contact .social{
+    background:#1f1f1f;
+    color:white;
+}
+
+body.dark-mode #contact .social span{
+    color:white;
+}
+
+
+/* الفوتر */
+body.dark-mode footer{
+    background:#0d0d0d;
+    color:white;
+}
+
+body.dark-mode footer a{
+    color:#ddd;
+}
+
+/* ===== قسم الجامعات - دارك مود ===== */
+
+.dark-mode #universities{
+    background:#121212;
+}
+
+.dark-mode .uni-card{
+    background:#1f1f1f;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+}
+
+.dark-mode .uni-content h3{
+    color:#ffffff;
+}
+
+.dark-mode .uni-content p{
+    color:#cfcfcf;
+}
+
+.dark-mode .uni-links a{
+    color:#4db8ff;
+}
+
+.dark-mode .uni-links a:hover{
+    color:#7fd3ff;
+}
+
+.dark-mode #search{
+    background:#2b2b2b;
+    color:#fff;
+    border:1px solid #444;
+}
+
+.dark-mode #search::placeholder{
+    color:#bdbdbd;
+}
+
+
+.dark-mode .documents{
+
+    background:#111;
+
+}
+
+.dark-mode .documents-text{
+
+    color:#ddd;
+
+}
+
+.dark-mode .documents-list li{
+
+    background:#1f1f1f;
+    color:#fff;
+    border-right:5px solid #4A90E2;
+
+}
+
+
+
+
+/* ===========================
+   Header
+=========================== */
+
+header{
+    position:fixed;
+    top: 0;
+    right:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 60px;
+    background:#163247;
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    transition:.3s;
+    
+}
+
+header.scrolled{
+    background:white;
+    box-shadow:0 3px 15px rgba(0,0,0,.1);
+}
+
+.logo{
+    color:white;
+    font-size:25px;
+    font-weight:bold;
+}
+
+header.scrolled .logo{
+    color:#2F6F8F;
+
+}
+
+header.scrolled .dark-btn{
+    color:#2c3e50;
+}
+
+
+
+
+/* ===========================
+   Navbar
+=========================== */
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+header.scrolled nav a{
+    color:#086bc6;
+    
+
+}
+
+nav a:hover{
+    color:#027ff3;
+    
+}
+
+/* ===========================
+   Hero
+=========================== */
+
+.hero{
+
+    height:100vh;
+
+    background:
+    linear-gradient(to left,
+    rgba(0,0,0,.15),
+    rgba(0,0,0,.75)),
+    url("images/hero11.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 10%;
+
+}
+
+.hero-content{
+    margin-top: 90px;
+    width: 32%;
+    
+    color: white;
+    text-align: right;
+}
+
+
+
+
+.hero-content h1{
+   text-shadow: 0 3px 10px rgba(0,0,0,.4);
+    font-size:42px;
+
+    line-height:1.3;
+     font-weight: 800;
+    margin-bottom:10px;
+
+}
+
+.hero-content span{
+
+    color:#2d9cff;
+
+}
+
+.hero-content p{
+
+    font-size:19px;
+    text-shadow: 0 3px 10px rgba(0,0,0,.4);
+    line-height:1.9;
+    color: #f1f1f1;
+    margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+    justify-content: flex-end;
+    gap:20px;
+
+}
+
+.btn-primary{
+
+    background:#2d9cff;
+
+    color:white;
+
+    padding:14px 34px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.btn-secondary{
+
+    border:2px solid white;
+
+    color:white;
+
+    padding:14px 34px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+    background:white;
+
+    color:#183b56;
+
+}
+
+
+
+/* ===========================
+   العناوين
+=========================== */
+
+.section-title{
+    text-align:center;
+    font-size:38px;
+    color:#2F6F8F;
+    margin:80px 0 50px;
+}
+
+
+/* ===========================
+   Services
+=========================== */
+
+.services{
+    width:90%;
+    max-width:1200px;
+    margin:100px auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.services-content{
+    flex:1;
+}
+
+.services-content p{
+    font-size:18px;
+    line-height:2;
+    color:#555;
+    margin:20px 0 35px;
+}
+
+.services-image{
+    flex:1;
+    text-align:center;
+}
+
+.services-image img{
+    width:100%;
+    max-width:450px;
+    height: auto;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+
+
+/* ===========================
+   الجامعات
+=========================== */
+
+#universities{
+    padding:80px 8%;
+    background:#f8f9fb;
+}
+
+.search-box{
+    text-align:center;
+    margin:30px 0;
+}
+
+.search-box input{
+
+    width:350px;
+    max-width:100%;
+    padding:14px 20px;
+
+    border: none;
+    border-radius:30px;
+
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    font-size:16px;
+    outline:none;
+
+}
+
+#universities-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+
+.uni-card{
+
+    background:white;
+
+    border-radius:16px;
+    box-shadow: 0 6px 18px;
+    overflow:hidden;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.uni-card:hover{
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 15);
+    transform:translateY(-5px);
+
+}
+
+.uni-card img{
+
+    width:100%;
+
+    height:170px;
+
+    object-fit:cover;
+
+}
+
+.uni-content{
+
+    padding:18px;
+
+    text-align:center;
+
+}
+
+.uni-content h3{
+
+    margin-bottom:10px;
+
+    color:#2F6F8F;
+
+}
+
+.uni-content p{
+
+    color:#160303;
+    font-size: 16px;
+    margin-bottom:15px;
+
+}
+
+.uni-links a{
+    color: white;
+    border-radius: 15px;
+    background:#183b56;
+text-decoration: none;
+padding: 12px;
+font-size: 15px;
+font-weight: 500;
+
+}
+
+
+
+/* ===========================
+   تواصل معنا
+=========================== */
+.footer-social{
+
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin:25px 0;
+
+}
+
+.footer-social a{
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#2d3748;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-size:20px;
+
+}
+
+.footer-social a:hover{
+
+    background:#4A90E2;
+    transform:translateY(-5px);
+
+}
+
+/* ألوان الأيقونات */
+
+.fa-whatsapp{
+    color:#25D366;
+}
+
+.fa-instagram{
+    color:#E4405F;
+}
+
+.fa-facebook{
+    color:#1877F2;
+}
+
+.fa-telegram{
+    color:#1877F2;
+}
+
+
+
+
+
+/* ===========================
+   Footer
+=========================== */
+
+.footer{
+
+    background:#1f2937;
+    color:#fff;
+    padding:50px 10% 25px;
+    text-align:center;
+
+}
+
+.footer h3{
+
+    font-size:28px;
+    margin-bottom:15px;
+
+}
+
+.footer p{
+
+    color:#d1d5db;
+    line-height:1.8;
+
+}
+
+
+.footer hr{
+
+    border:none;
+    border-top:1px solid rgba(255,255,255,.2);
+    margin:25px 0;
+
+}
+
+.copyright{
+
+    font-size:14px;
+    color:#9ca3af;
+
+}
+
+
+/* ===========================
+   من نحن
+=========================== */
+
+.about{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+    padding:90px 60px;
+    flex-wrap:wrap;
+    background:white;
+}
+
+.about-image img{
+    width:420px;
+    max-width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.about-content{
+    max-width:550px;
+}
+
+.about-content p{
+    font-size:18px;
+    color:#555;
+    line-height:2;
+    margin:20px 0 30px;
+}
+
+.about-btn{
+    display:inline-block;
+    background:#4A90E2;
+    color:white;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.about-btn:hover{
+    background:#357ABD;
+    transform:translateY(-3px);
+}
+
+.drop-btn{
+    background:none;
+    border:none;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    right:0;
+    background:white;
+    min-width:220px;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.dropdown-content a{
+    display:block;
+    padding:15px;
+    color:#333;
+    text-decoration:none;
+}
+
+.dropdown-content a:hover{
+    background:#F5F9FC;
+}
+
+
+/*==============================
+    ترتيب الجامعات
+==============================*/
+
+.ranking-section{
+    padding:80px 8%;
+    background:#f7f9fc;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:34px;
+    color:#183b56;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+    font-size:17px;
+}
+
+/* الأزرار */
+
+.ranking-tabs{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:35px;
+}
+
+.tab-btn{
+
+    background:white;
+    border:2px solid #183b56;
+    color:#183b56;
+
+    padding:13px 30px;
+
+    border-radius:50px;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.tab-btn:hover{
+
+    background:#183b56;
+    color:white;
+
+}
+
+.tab-btn.active{
+
+    background:#183b56;
+    color:white;
+
+}
+
+/* البطاقة */
+
+.table-box{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+/* الجدول */
+
+.ranking-table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.ranking-table thead{
+
+    background:#183b56;
+    color:white;
+
+}
+
+.ranking-table th{
+
+    padding:18px;
+    font-size:17px;
+
+}
+
+.ranking-table td{
+
+    padding:18px;
+
+    text-align:center;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+/* تأثير */
+
+.ranking-table tbody tr{
+
+    transition:.3s;
+
+}
+
+.ranking-table tbody tr:hover{
+
+    background:#f3f7ff;
+
+}
+
+/* أول 3 مراكز */
+
+.gold{
+
+    background:#fff7da;
+
+    font-weight:bold;
+
+}
+
+.silver{
+
+    background:#f3f3f3;
+
+    font-weight:bold;
+
+}
+
+.bronze{
+
+    background:#fff1e4;
+
+    font-weight:bold;
+
+}
+
+
+.documents{
+
+    padding:80px 10%;
+    background:#f8f9fb;
+
+}
+
+.documents-text{
+
+    text-align:center;
+    color:#666;
+    margin:20px auto 40px;
+    max-width:700px;
+
+}
+
+.documents-list{
+
+    list-style:none;
+    max-width:700px;
+    margin:auto;
+    padding:0;
+
+}
+
+.documents-list li{
+
+    background:#fff;
+    margin-bottom:15px;
+    padding:18px 20px;
+    border-radius:10px;
+    border-right:5px solid #4A90E2;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    font-size:17px;
+    transition:.3s;
+
+}
+
+.documents-list li:hover{
+
+    transform:translateX(-5px);
+
+} 
+
+
+/* ===========================
+   زر العودة للأعلى
+=========================== */
+
+#topBtn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:25px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2d9cff;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:none;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+#topBtn:hover{
+
+    background:#1b7ed6;
+
+    transform:translateY(-4px);
+
+}
+
+
+/* ===========================
+   شاشة التحميل
+=========================== */
+
+#loader{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    transition:.5s;
+
+}
+
+.loader-box{
+
+    text-align:center;
+
+}
+
+.spinner{
+
+    width:65px;
+    height:65px;
+
+    border:6px solid #dbeafe;
+    border-top:6px solid #2d9cff;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin:auto;
+    margin-bottom:25px;
+
+}
+
+.loader-box h2{
+
+    color:#183b56;
+    margin-bottom:15px;
+
+}
+
+.loader-box p{
+
+    color:#666;
+    font-size:18px;
+
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+body.dark-mode #loader{
+
+    background:#121212;
+
+}
+
+body.dark-mode .loader-box h2{
+
+    color:white;
+
+}
+
+body.dark-mode .loader-box p{
+
+    color:#ddd;
+
+}
+
+
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px) {
+
+    header{
+        padding:15px 20px;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero-content{
+        width:70%;
+    }
+
+    .services,
+    .about{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .services-content,
+    .about-content{
+        max-width:100%;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero{
+        text-align:center;
+    }
+
+    .overlay{
+        justify-content:center;
+        padding:20px;
+    }
+
+    .hero-content{
+        width:100%;
+        margin-top:80px;
+        text-align:center;
+    }
+
+    .hero-content h1{
+        font-size:34px;
+    }
+
+    .hero-content p{
+        font-size:17px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    #universities-list{
+        grid-template-columns:1fr;
+    }
+
+    .ranking-table{
+        font-size:14px;
+    }
+
+    .ranking-table th,
+    .ranking-table td{
+        padding:10px;
+    }
+
+    .search-box input{
+        width:100%;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .hero-content h1{
+        font-size:28px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+    }
+
+    .btn-primary,
+    .about-btn{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+

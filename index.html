@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل الطالب السوري</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="loader">
+
+    <div class="loader-box">
+
+        <div class="spinner"></div>
+
+        <h2>🎓 دليل الطالب السوري</h2>
+
+        <p id="loadingText">جاري تحميل الموقع...</p>
+
+    </div>
+
+</div>
+
+
+
+    <!-- Header -->
+    <header>
+
+        <div class="logo">
+            🎓 دليل الطالب السوري
+        </div>
+
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#services">الخدمات</a>
+            <a href="#universities">الجامعات</a>
+            <a href="#ranking">ترتيب الجامعات</a>
+            <a href="#documents">الأوراق المطلوبة</a>
+            <a href="#about">من نحن</a>
+            <button id="darkModeToggle" class="dark-btn">
+    🌙
+</button>
+        </nav>
+      
+    </header>
+
+    <section id="home" class="hero">
+
+    <div class="overlay">
+
+        <div class="hero-content">
+
+            <h1>
+                مستعد لبداية
+                <span>رحلتك الجامعية؟</span>
+            </h1>
+
+            <p>
+                نساعدك في التسجيل الجامعي ومعرفة
+                الأوراق المطلوبة خطوة بخطوة،
+                لتبدأ طريقك بسهولة.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#services" class="btn-primary">
+                    سجل الآن
+                </a>
+            
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    
+   <!-- خدمات الموقع -->
+
+<section id="services" class="services">
+
+    <div class="services-content">
+
+        <h2 class="section-title"> ماذا يقدم لك الموقع؟</h2>
+
+        <p>
+            دليل الطالب السوري يوفر كل ما يحتاجه الطالب في مكان واحد،
+            بدءًا من التعرف على الجامعات والتخصصات، وصولًا إلى الأوراق المطلوبة
+            وإجراءات التسجيل، لتبدأ رحلتك الجامعية بكل سهولة.
+        </p>
+
+        <a href="#universities" class="about-btn">
+            ابدأ رحلتك الجامعية
+        </a>
+
+    </div>
+
+    <div class="services-image">
+
+        <img src="images/ser2.jpg" alt="خدمات الموقع">
+
+    </div>
+
+</section>
+
+<!-- ===========================
+      الجامعات السورية
+=========================== -->
+
+
+<section id="universities">
+
+    <h2 class="section-title"> الجامعات السورية</h2>
+
+    
+
+    <div id="universities-list"></div>
+
+</section>
+
+
+
+
+
+
+<!-- ===========================
+      ترتيب الجامعات السورية
+=========================== -->
+
+<section id="ranking" class="ranking-section">
+
+    <div class="section-title">
+        <h2>🏆 ترتيب الجامعات السورية</h2>
+        <p>ترتيب الجامعات الحكومية والخاصة حسب الترتيب العالمي.</p>
+    </div>
+
+    <!-- الأزرار -->
+    <div class="ranking-tabs">
+        <button class="tab-btn active" onclick="showTable('public', this)">
+            الجامعات الحكومية
+        </button>
+
+        <button class="tab-btn" onclick="showTable('private', this)">
+            الجامعات الخاصة
+        </button>
+    </div>
+
+    <!-- ===================== -->
+    <!-- الجامعات الحكومية -->
+    <!-- ===================== -->
+
+    <div id="public" class="table-box">
+
+        <table class="ranking-table">
+
+            <thead>
+                <tr>
+                    <th>الترتيب</th>
+                    <th>الجامعة</th>
+                    <th>الترتيب العالمي</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr class="gold">
+                    <td>🥇 1</td>
+                    <td>جامعة دمشق</td>
+                    <td>3028</td>
+                </tr>
+
+                <tr class="silver">
+                    <td>🥈 2</td>
+                    <td>جامعة حلب</td>
+                    <td>5240</td>
+                </tr>
+
+                <tr class="bronze">
+                    <td>🥉 3</td>
+                    <td>جامعة حمص</td>
+                    <td>5682</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>المعهدالعالي للعلوم التطبيقية و التكنولوجيا </td>
+                    <td>6091</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>الجامعة الافتراضية السورية</td>
+                    <td>6626</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>جامعة طرطوس</td>
+                    <td>9604</td>
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td> جامعة حماة  </td>
+                    <td>9958</td>
+                </tr>
+
+                <tr>
+                    <td>8</td>
+                    <td>جامعة اللاذقية</td>
+                    <td>10974</td>
+                </tr>
+
+                <tr>
+                    <td>9</td>
+                    <td>المعهد الوطني للإدارة الاعمال </td>
+                    <td>15438</td>
+                </tr>
+
+                <tr>
+                    <td>11</td>
+                    <td>جامعة الفرات</td>
+                    <td>20346</td>
+                </tr>
+
+                <tr>
+                    <td>10</td>
+                    <td>المعهد الوطني للإدارة العامة</td>
+                    <td>19470</td>
+                </tr>
+
+                <tr>
+                    <td>12</td>
+                    <td>جامعة إدلب</td>
+                    <td>21316</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- الجامعات الخاصة -->
+    <!-- ===================== -->
+
+    <div id="private" class="table-box" style="display:none;">
+
+        <table class="ranking-table">
+
+            <thead>
+                <tr>
+                    <th>الترتيب</th>
+                    <th>الجامعة</th>
+                    <th>الترتيب العالمي</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr class="gold">
+                    <td>🥇 1</td>
+                    <td>الجامعة السورية الخاصة </td>
+                    <td>6107</td>
+                </tr>
+
+                <tr class="silver">
+                    <td>🥈 2</td>
+                    <td>الجامعةالعربيةالدولية </td>
+                    <td>6290</td>
+                </tr>
+
+                <tr class="bronze">
+                    <td>🥉 3</td>
+                    <td> جامعة الاندلس الحاصة للعلوم الطبية </td>
+                    <td>7521</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>جامعة الدولية الخاصة للعلوم و التكنولوجيا   </td>
+                    <td>7569</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>جامعة  الوادي الدولية</td>
+                    <td>8046</td>
+                </tr>
+
+               
+                <tr>
+                    <td>6</td>
+                    <td>جامعة  القلمون الخاصة </td>
+                    <td>9146</td>
+                </tr>
+
+                
+                <tr>
+                    <td>7</td>
+                    <td>جامعة  الشام الخاصة </td>
+                    <td>9681</td>
+                </tr>
+
+                
+                <tr>
+                    <td>8</td>
+                    <td>جامعة  الوطنية الخاصة </td>
+                    <td>9699</td>
+                </tr>
+
+                
+                <tr>
+                    <td>9</td>
+                    <td>جامعة  المنارة الخاصة </td>
+                    <td>14063</td>
+                </tr>
+
+                 
+                <tr>
+                    <td>10</td>
+                    <td>جامعة  الحواش الخاصة </td>
+                    <td>14253</td>
+                </tr>
+
+                 
+                <tr>
+                    <td>11</td>
+                    <td>جامعة  اليرموك الخاصة </td>
+                    <td>16858</td>
+                </tr>
+ 
+                
+                <tr>
+                    <td>12</td>
+                    <td>جامعة  الجزيرة الخاصة </td>
+                    <td>19336</td>
+                </tr>
+
+                
+                <tr>
+                    <td>13</td>
+                    <td>جامعة  الاتحاد الخاصة </td>
+                    <td>20084</td>
+                </tr>
+
+                
+                <tr>
+                    <td>14</td>
+                    <td>جامعة  العربية الحاصة للعلوم و التكنولوجيا </td>
+                    <td>22884</td>
+                </tr>
+
+                
+                <tr>
+                    <td>15</td>
+                    <td>جامعة  انطاكية السورية الخاصة </td>
+                    <td>22888</td>
+                </tr>
+
+                
+                <tr>
+                    <td>16</td>
+                    <td>جامعة  المعارف للعلوم التطبيقية </td>
+                    <td>22949</td>
+                </tr>
+
+                
+                <tr>
+                    <td>17</td>
+                    <td>  جامعة قاسيون الخاصة للعلوم و التكنولوجيا </td>
+                    <td>24268</td>
+                </tr>
+
+                
+                <tr>
+                    <td>18</td>
+                    <td>جامعة  قرطبة الخاصة </td>
+                    <td>25749</td>
+                </tr>
+
+                
+                <tr>
+                    <td>19</td>
+                    <td>جامعة  الشهباء الخاصة </td>
+                    <td>27147</td>
+                </tr>
+
+                
+                <tr>
+                    <td>20</td>
+                    <td>جامعة  بلاد الشام للعلوم الشرعية </td>
+                    <td>27702</td>
+                </tr>
+
+                
+                <tr>
+                    <td>21</td>
+                    <td>جامعة  ايبلا الخاصة </td>
+                    <td>28183</td>
+                </tr>
+
+                
+                <tr>
+                    <td>22</td>
+                    <td>جامعة  الشام العالمية </td>
+                    <td>29312</td>
+                </tr>
+
+                
+                <tr>
+                    <td>23</td>
+                    <td>جامعة  الشمال الخاصة </td>
+                    <td>30016</td>
+                </tr>
+
+                
+                <tr>
+                    <td>24</td>
+                    <td>  الاكاديمية العربية للاعمال الالكترونية </td>
+                    <td>31216</td>
+                </tr>
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<section id="documents" class="documents">
+
+    <h2 class="section-title"> الأوراق المطلوبة</h2>
+
+    <p class="documents-text">
+        قد تختلف الأوراق المطلوبة من جامعة إلى أخرى، لذلك يُنصح دائمًا بمراجعة الموقع الرسمي للجامعة قبل التقديم.
+    </p>
+
+    <ul class="documents-list">
+
+        <li> الهوية الشخصية أو اخراج قيد .</li>
+
+        <li> شهادة الثانوية الأصلية.</li>
+        <li> صور شخصية حديثة.</li>
+
+        <li>كشف  علامات.</li>
+
+
+    </ul>
+
+</section>
+ 
+
+
+<!-- من نحن -->
+
+<section id="about" class="about">
+
+    <div class="about-image">
+        <img src="images/about.jpg" alt="طلاب جامعيون">
+    </div>
+
+    <div class="about-content">
+
+        <h2 class="section-title">من نحن</h2>
+
+        <p>
+            دليل الطالب السوري هو منصة تهدف إلى مساعدة الطلاب السوريين
+            في الوصول إلى المعلومات الجامعية بسهولة، مثل الحدود الدنيا،
+            والتخصصات، وإجراءات التسجيل، وتصديق الشهادات، وكل ما يحتاجه
+            الطالب في رحلته الجامعية.
+        </p>
+
+        <a href="#services" class="about-btn">
+            تعرف على خدماتنا
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h3>🎓 دليل الطالب السوري</h3>
+
+        <p>
+            نسعى لتوفير معلومات تساعد الطلاب في الوصول إلى الجامعات والخدمات بسهولة.
+        </p>
+
+        <div class="footer-social">
+
+    <a href="https://wa.me/XXXXXXXXXXX" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://instagram.com/اسم_حسابك" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://facebook.com/اسم_صفحتك" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="mailto:example@email.com">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+</div>
+        
+        <hr>
+
+        
+        <p class="copyright">
+          دليل الطالب السوري جميع الحقوق محفوظة
+        </p>
+
+    </div>
+
+
+
+
+
+
+</footer>
+
+    <button id="topBtn">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
