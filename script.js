@@ -213,7 +213,7 @@ const changeMessage = setInterval(() => {
 
     loadingText.textContent = messages[index];
 
-}, 500);
+}, 1000);
 
 window.addEventListener("load", () => {
 
