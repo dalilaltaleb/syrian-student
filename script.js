@@ -10,7 +10,7 @@ const universities = [
 {
     name: "جامعة حلب",
     city: "حلب",
-    image: "images/aleppo.jpg",
+    image: "images/ALEPPO.jpg",
     website: "https://www.alepuniv.edu.sy",
     
 },
@@ -18,7 +18,7 @@ const universities = [
 {
     name: "جامعة دمشق",
     city: "دمشق",
-    image: "images/damascus.jpg.jpg",
+    image: "images/Damascus.jpg.jpg",
     website: "https://www.damascusuniversity.edu.sy",
     
 },
