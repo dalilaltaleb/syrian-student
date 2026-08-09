@@ -880,7 +880,7 @@ font-weight: 500;
 
 .documents{
 
-    padding:80px 10%;
+    padding:10px 10%;
     background:#f8f9fb;
 
 }
@@ -898,7 +898,7 @@ font-weight: 500;
 
     list-style:none;
     max-width:700px;
-    margin:auto;
+    margin: auto;
     padding:0;
 
 }
