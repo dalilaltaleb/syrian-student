@@ -82,7 +82,7 @@ const universities = [
 
 {
     name: "جامعة ماري الخاصة",
-    city: "إدلب – حزانو",
+    city: "إدلب  ",
     logo: "images/logos/mpu.webp",
     map: "https://www.google.com/maps/place/36%C2%B005'55.0%22N+36%C2%B043'17.6%22E/@36.0986038,36.7215583,17z/data=!3m1!4b1!4m4!3m3!8m2!3d36.0986038!4d36.7215583",
     type: "private"
@@ -92,7 +92,7 @@ const universities = [
 
     {
     name: "جامعة إيبلا الخاصة",
-    city: "إدلب – سراقب",
+    city: "إدلب  ",
     logo: "images/logos/ebls.webp",  
     map: "https://maps.app.goo.gl/9ohXbFLibtLM5q8R6?g_st=aw",
     type: "private"
@@ -236,7 +236,7 @@ const universities = [
 
 {
     name: "الجامعة الدولية للعلوم والنهضة",
-    city: " حلب اعزاز  ",
+    city: " حلب   ",
     logo: "images/logos/iusr.webp",  
     map: "https://www.google.com/maps/search/?api=1&query=الجامعة+الدولية+للعلوم+والنهضة+أعزاز",
     type: "private"
@@ -268,7 +268,7 @@ const universities = [
 
 {
     name: "جامعة الزيتونة الدولية",
-    city: "حلب اعزاز",
+    city: "حلب ",
     logo: "images/logos/ziu.webp",  
     map: "https://www.google.com/maps/search/?api=1&query=جامعة+الزيتونة+الدولية+أعزاز",
     type: "private"
@@ -276,7 +276,7 @@ const universities = [
 
 {
     name: "جامعة الشمال الخاصة",
-    city: "ادلب سرمدا",
+    city: "ادلب ",
     logo: "images/logos/spus.webp",  
     map: "https://www.google.com/maps/search/?api=1&query=جامعة+الشمال+الخاصة+سرمدا",
     type: "private"
