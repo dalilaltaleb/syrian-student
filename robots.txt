@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+User-agent: *
+Allow: /
 
-    <url>
-        <loc>https://hanansatam13-dot.github.io/syrian-student/</loc>
-    </url>
-
-</urlset>
+Sitemap: https://dalilaltaleb.github.io/syrian-student/sitemap.xml
