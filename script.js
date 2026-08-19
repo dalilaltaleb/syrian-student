@@ -188,7 +188,7 @@ const universities = [
 
 {
     name: "جامعة الاتحاد الخاصة",
-    city: "درعا",
+    city: "حلب",
     logo: "images/logos/alithad.webp",  
     map: "https://www.google.com/maps/search/?api=1&query=جامعة+الاتحاد+الخاصة",
     type: "private"
@@ -197,7 +197,7 @@ const universities = [
 {
     name: "الجامعة العربية الخاصة للعلوم والتكنولوجيا",
     city: "حماة",
-    logo: "images/logos/ulu.webp",  
+    logo: "images/logos/aust.webp",  
     map: "https://www.google.com/maps/search/?api=1&query=الجامعة+العربية+الخاصة+للعلوم+والتكنولوجيا",
     type: "private"
 },
