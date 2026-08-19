@@ -200,6 +200,8 @@ header.scrolled{
     font-weight:bold;
 }
 
+
+
 header.scrolled .logo{
     color:#2F6F8F;
 
@@ -423,114 +425,519 @@ nav a:hover{
 }
 
 
-
-/* ===========================
+ /* ===========================
    الجامعات
 =========================== */
 
 #universities{
-    padding:80px 8%;
+    padding: 100px 6% 60px;
     background:#f8f9fb;
 }
 
-.search-box{
-    text-align:center;
-    margin:30px 0;
-}
 
-.search-box input{
 
-    width:350px;
-    max-width:100%;
-    padding:14px 20px;
-
-    border: none;
-    border-radius:30px;
-
-    background:white;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
-    font-size:16px;
-    outline:none;
-
-}
+/* ===========================
+   شبكة الكروت
+=========================== */
 
 #universities-list{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(3, 1fr);
 
-    gap:25px;
+    gap:15px;
+
+    max-width:1100px;
+
+    margin:0 auto;
 
 }
 
+
+/* ===========================
+   كرت الجامعة
+=========================== */
 
 .uni-card{
 
     background:white;
 
-    border-radius:12px;
-    box-shadow: 0 6px 10px;
+    border-radius:15px;
+
     overflow:hidden;
 
-    box-shadow:0 8px 12px rgba(140, 135, 135, 0.08);
+    box-shadow:0 5px 14px rgba(0,0,0,.08);
 
     transition:.3s;
+
+    height:240px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
 
 }
 
 .uni-card:hover{
 
-    box-shadow: 0 10px 18px rgba(0, 0, 0, 10);
     transform:translateY(-5px);
 
+    box-shadow:0 10px 20px rgba(0,0,0,.12);
+
 }
+
+
+/* ===========================
+   صورة / شعار الجامعة
+=========================== */
 
 .uni-card img{
 
-    width:100%;
+    width:90px;
 
-    height:170px;
+    height:90px;
 
-    object-fit:cover;
+    object-fit:contain;
+
+    border-radius:50%;
+
+    margin-top:18px;
+
+    flex-shrink:0;
 
 }
+
+
+/* ===========================
+   محتوى الكرت
+=========================== */
 
 .uni-content{
 
-    padding:18px;
+    padding:10px 12px 15px;
 
     text-align:center;
 
+    width:100%;
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
 }
+
 
 .uni-content h3{
 
-    margin-bottom:10px;
+    margin:5px 0 5px;
 
     color:#2F6F8F;
 
+    font-size:17px;
+
+    line-height:1.5;
+
 }
+
 
 .uni-content p{
 
-    color:#160303;
-    font-size: 16px;
-    margin-bottom:15px;
+    color:#666;
+
+    margin:0 0 10px;
+
+    font-size:14px;
 
 }
+
+
+/* ===========================
+   زر الخريطة
+=========================== */
+
+.uni-links{
+
+    margin-top:auto;
+
+}
+
 
 .uni-links a{
-    color: white;
-    border-radius: 15px;
-    background:#183b56;
-text-decoration: none;
-padding: 12px;
-font-size: 15px;
-font-weight: 500;
+
+    display:inline-block;
+
+    padding:5px 14px;
+
+    text-decoration:none;
+
+    border-radius:20px;
+
+    background:#163247;
+
+    color:white;
+
+    font-size:13px;
+
+    transition:.3s;
 
 }
+
+
+.uni-links a:hover{
+
+    background:#2d9cff;
+
+}
+
+
+
+
+/* ===========================
+   الموبايل
+
+
+@media (max-width:768px){
+
+    #universities-list{
+
+        grid-template-columns:repeat(2, 1fr);
+
+        gap:12px;
+
+    }
+
+    .uni-card{
+
+        height:270px;
+
+    }
+
+    .uni-card img{
+
+        width:80px;
+
+        height:80px;
+
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    #universities{
+
+        padding:100px 15px 50px;
+
+    }
+
+    #universities-list{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:10px;
+
+    }
+
+    .uni-card{
+
+        height:260px;
+
+    }
+
+    .uni-card img{
+
+        width:70px;
+
+        height:70px;
+
+        margin-top:15px;
+
+    }
+
+    .uni-content h3{
+
+        font-size:14px;
+
+    }
+
+    .uni-content p{
+
+        font-size:12px;
+
+    }
+
+    .uni-links a{
+
+        font-size:12px;
+
+        padding:4px 11px;
+
+    }
+
+}=========================== */
+
+
+
+/* ===========================
+   أزرار الجامعات
+=========================== */
+
+.university-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0 40px;
+    flex-wrap: wrap;
+}
+
+.university-tab {
+    border: 2px solid #183b56;
+    background: white;
+    color: #183b56;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.university-tab:hover,
+.university-tab.active {
+    background: #183b56;
+    color: white;
+}
+
+.no-results {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+
+/* ===========================
+   قسم التسجيل
+=========================== */
+
+.register-banner {
+    width: 100%;
+    margin: 60px 0;
+    padding: 55px 7%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    direction: rtl;
+
+    background: linear-gradient(
+        135deg,
+        #071b33,
+        #0d3154
+    );
+
+    color: white;
+}
+
+
+/* النص */
+
+.register-text {
+    max-width: 720px;
+}
+
+.register-label {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: #f4bd43;
+}
+
+.register-text h2 {
+    margin: 0 0 15px;
+
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.register-text p {
+    margin: 8px 0;
+
+    font-size: 17px;
+    line-height: 1.9;
+
+    color: #e7edf4;
+}
+
+.register-text strong {
+    color: #ffffff;
+}
+
+.register-note {
+    font-weight: 600;
+}
+
+
+/* الأزرار */
+
+.register-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    min-width: 180px;
+}
+
+.register-btn,
+.contact-register-btn {
+    display: block;
+
+    padding: 14px 28px;
+
+    border-radius: 8px;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+
+/* زر سجل الآن */
+
+.register-btn {
+    background: #f4bd43;
+    color: #172b3d;
+}
+
+.register-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* زر تواصل معنا */
+
+.contact-register-btn {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: transparent;
+}
+
+.contact-register-btn:hover {
+    background: #ffffff;
+    color: #172b3d;
+}
+
+
+/* ===========================
+   الموبايل
+=========================== */
+
+@media (max-width: 768px) {
+
+    .register-banner {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 45px 20px;
+
+        margin: 40px 0;
+    }
+
+    .register-text h2 {
+        font-size: 27px;
+    }
+
+    .register-text p {
+        font-size: 15px;
+    }
+
+    .register-actions {
+        width: 100%;
+        max-width: 280px;
+    }
+
+}
+
+
+/* ===========================
+   Dark Mode - قسم التسجيل
+=========================== */
+
+body.dark-mode .register-banner {
+    background: linear-gradient(
+        135deg,
+        #020b16,
+        #071d32
+    );
+
+    color: #ffffff;
+}
+
+body.dark-mode .register-label {
+    color: #f4bd43;
+}
+
+body.dark-mode .register-text h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .register-text p {
+    color: #d8e0e8;
+}
+
+body.dark-mode .register-text strong {
+    color: #ffffff;
+}
+
+body.dark-mode .register-note {
+    color: #e8edf2;
+}
+
+
+/* زر سجّل الآن */
+
+body.dark-mode .register-btn {
+    background: #f4bd43;
+    color: #111c27;
+}
+
+body.dark-mode .register-btn:hover {
+    background: #ffd36a;
+}
+
+
+/* زر تواصل معنا */
+
+body.dark-mode .contact-register-btn {
+    border-color: #ffffff;
+    color: #ffffff;
+    background: transparent;
+}
+
+body.dark-mode .contact-register-btn:hover {
+    background: #ffffff;
+    color: #071d32;
+}
+
+
 
 
 
@@ -657,8 +1064,8 @@ font-weight: 500;
 }
 
 .about-image img{
-    width:400px;
-    max-width:100%;
+    width:100%;
+    max-width:400px;
     border-radius:20px;
     box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
@@ -973,7 +1380,6 @@ font-weight: 500;
 /* ===========================
    شاشة التحميل
 =========================== */
-
 #loader{
 
     position:fixed;
@@ -1031,6 +1437,9 @@ font-weight: 500;
     font-size:18px;
 
 }
+
+ 
+
 
 @keyframes spin{
 

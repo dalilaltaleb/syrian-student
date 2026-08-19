@@ -1,64 +1,286 @@
 
 
 // ===============================
-//  الجامعات
-// ==============================
+// الجامعات السورية
+// =============================
+
 
 
 const universities = [
 
-{
-    name: "جامعة حلب",
-    city: "حلب",
-    image: "images/ALEPPO.jpg",
-    website: "https://www.alepuniv.edu.sy",
-    
+    {
+        name: "جامعة حلب",
+        city: "حلب",
+        logo: "images/logos/alepun.webp",
+        map: "https://www.google.com/maps/search/?api=1&query=جامعة+حلب",
+        type: "public"
+    },
+
+    {
+        name: "جامعة دمشق",
+        city: "دمشق",
+         logo: "images/logos/damac.webp",
+         map: "https://www.google.com/maps/search/?api=1&query=جامعة+دمشق",
+        type: "public"
+    },
+
+    {
+        name: "جامعة اللاذقية",
+        city: "اللاذقية",
+        logo: "images/logos/alaz.webp",
+         map: "https://www.google.com/maps/search/?api=1&query=جامعة+تشرين+اللاذقية" ,
+        type: "public"
+    },
+
+    {
+        name: "جامعة حماة",
+        city: "حماة",
+        logo: "images/logos/hama.webp",
+        map: "https://www.google.com/maps/search/?api=1&query=جامعة+حماة",
+        type: "public"
+    },
+
+    {
+    name: "جامعة حمص",
+    city: "حمص",
+    logo: "images/logos/homs.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+حمص",
+    type: "public"
 },
 
 {
-    name: "جامعة دمشق",
+    name: "الجامعة الافتراضية السورية",
     city: "دمشق",
-    image: "images/Damascus.jpg.jpg",
-    website: "https://www.damascusuniversity.edu.sy",
-    
+    logo: "images/logos/svu.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+الافتراضية+السورية",
+    type: "public"
 },
 
 {
-    name: "جامعة تشرين",
-    city: "اللاذقية",
-    image: "images/tishreen.jpeg",
-    website: "https://maps.google.com/?q=جامعة+تشرين",
-    
+    name: "جامعة طرطوس",
+    city: "طرطوس",
+    logo: "images/logos/tartus.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+طرطوس",
+    type: "public"
 },
 
+{
+    name: "جامعة الفرات",
+    city: "دير الزور",
+    logo: "images/logos/alforat.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الفرات+دير+الزور",
+    type: "public"
+},
+
+{
+    name: "جامعة إدلب",
+    city: "إدلب",
+     logo: "images/logos/idlib.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+إدلب",
+    type: "public"
+},
 
 {
     name: "جامعة ماري الخاصة",
-    city: "ادلب",
-    image: "images/mari.webp",
-    website: " https://www.mari.edu.sy/",
-    
+    city: "إدلب – حزانو",
+    logo: "images/logos/mpu.webp",
+    map: "https://www.google.com/maps/place/36%C2%B005'55.0%22N+36%C2%B043'17.6%22E/@36.0986038,36.7215583,17z/data=!3m1!4b1!4m4!3m3!8m2!3d36.0986038!4d36.7215583",
+    type: "private"
 },
 
 
+
+    {
+    name: "جامعة إيبلا الخاصة",
+    city: "إدلب – سراقب",
+    logo: "images/logos/ebls.webp",  
+    map: "https://maps.app.goo.gl/9ohXbFLibtLM5q8R6?g_st=aw",
+    type: "private"
+},
+
+   {
+    name: "الجامعة العربية الدولية",
+    city: "درعا",
+    logo: "images/logos/aiu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+العربية+الدولية",
+    type: "private"
+},
+
 {
-    name: "جامعة حماة",
+    name: "الجامعة الدولية الخاصة للعلوم والتكنولوجيا",
+    city: "درعا",
+    logo: "images/logos/iust.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+الدولية+الخاصة+للعلوم+والتكنولوجيا",
+    type: "private"
+},
+
+{
+    name: "الجامعة السورية الخاصة",
+    city: "دمشق",
+    logo: "images/logos/spu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+السورية+الخاصة+الكسوة",
+    type: "private"
+},
+
+{
+    name: "جامعة الأندلس الخاصة للعلوم الطبية",
+    city: "طرطوس",
+    logo: "images/logos/au.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الأندلس+الخاصة+القدموس",
+    type: "private"
+},
+
+{
+    name: "جامعة القلمون الخاصة",
+    city: "ريف دمشق ",
+    logo: "images/logos/kalamun.webp",   
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+القلمون+دير+عطية",
+    type: "private"
+},
+
+{
+    name: "جامعة الوادي الدولية",
+    city: "حمص ",
+    logo: "images/logos/wiu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الوادي+الدولية+وادي+النضارة",
+    type: "private"
+},
+
+{
+    name: "جامعة الشام الخاصة",
+    city: "ريف دمشق",
+    logo: "images/logos/alsham.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الشام+الخاصة",
+    type: "private"
+},
+
+{
+    name: "جامعة المنارة الخاصة",
+    city: "اللاذقية",
+    logo: "images/logos/manaara.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+المنارة+الخاصة+اللاذقية",
+    type: "private"
+},
+
+{
+    name: "جامعة الجزيرة الخاصة",
+    city: "درعا ",
+    logo: "images/logos/ipu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الجزيرة+الخاصة",
+    type: "private"
+},
+
+{
+    name: "الجامعة الوطنية الخاصة",
     city: "حماة",
-    image: "images/hama.jpg",
-    website: "https://hama-univ.edu.sy/ ",
-    
+    logo: "images/logos/wpu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+الوطنية+الخاصة+حماة",
+    type: "private"
 },
-
 
 {
-    name: "جامعة ايبلا الخاصة",
-    city: "ادلب",
-    image: "images/ablee.jpg",
-    website: "https://www.ebla.edu.sy/home ",
-    
+    name: "جامعة الحواش الخاصة",
+    city: "حمص",
+    logo: "images/logos/hpu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الحواش+الخاصة",
+    type: "private"
 },
 
+{
+    name: "جامعة الاتحاد الخاصة",
+    city: "درعا",
+    logo: "images/logos/alithad.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الاتحاد+الخاصة",
+    type: "private"
+},
 
+{
+    name: "الجامعة العربية الخاصة للعلوم والتكنولوجيا",
+    city: "حماة",
+    logo: "images/logos/ulu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+العربية+الخاصة+للعلوم+والتكنولوجيا",
+    type: "private"
+},
+
+{
+    name: "جامعة اليرموك الخاصة",
+    city: "درعا",
+    logo: "images/logos/ypu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+اليرموك+الخاصة",
+    type: "private"
+},
+
+{
+    name: "جامعة أنطاكية السورية الخاصة",
+    city: "ريف دمشق",
+    logo: "images/logos/asu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+أنطاكية+السورية+الخاصة",
+    type: "private"
+},
+
+{
+    name: "جامعة قاسيون الخاصة للعلوم والتكنولوجيا",
+    city: "دمشق",
+    logo: "images/logos/pu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+قاسيون+الخاصة",
+    type: "private"
+},
+
+{
+    name: "جامعة بلاد الشام للعلوم الشرعية",
+    city: "دمشق",
+    logo: "images/logos/sham.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+بلاد+الشام+للعلوم+الشرعية",
+    type: "private"
+},
+
+{
+    name: "الجامعة الدولية للعلوم والنهضة",
+    city: " حلب اعزاز  ",
+    logo: "images/logos/iusr.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+الدولية+للعلوم+والنهضة+أعزاز",
+    type: "private"
+},
+
+{
+    name: "جامعة الشهباء الخاصة",
+    city: "حلب",
+    logo: "images/logos/suu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الشهباء+الخاصة+حلب",
+    type: "private"
+},
+
+{
+    name: "جامعة الرشيد الدولية الخاصة للعلوم والتكنولوجيا",
+    city: "درعا",
+    logo: "images/logos/ru.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الرشيد+الدولية+الخاصة",
+    type: "private"
+},
+
+{
+    name: "جامعة قرطبة الخاصة",
+    city: "حلب",
+    logo: "images/logos/cpu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+قرطبة+الخاصة+حلب",
+    type: "private"
+},
+
+{
+    name: "جامعة الزيتونة الدولية",
+    city: "حلب اعزاز",
+    logo: "images/logos/ziu.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الزيتونة+الدولية+أعزاز",
+    type: "private"
+},
+
+{
+    name: "جامعة الشمال الخاصة",
+    city: "ادلب سرمدا",
+    logo: "images/logos/spus.webp",  
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الشمال+الخاصة+سرمدا",
+    type: "private"
+},
 
 
 
@@ -66,55 +288,91 @@ const universities = [
 
 ];
 
+
 const list = document.getElementById("universities-list");
 
-function showUniversities(data){
+if (list) {
 
-    list.innerHTML = "";
+    function showUniversities(data) {
 
-    data.forEach(uni=>{
+        list.innerHTML = "";
 
-        list.innerHTML += `
+        if (data.length === 0) {
 
-        <div class="uni-card">
+            list.innerHTML = `
+                <p class="no-results">
+                    لم يتم العثور على جامعة.
+                </p>
+            `;
 
-            <img src="${uni.image}" alt="${uni.name}">
+            return;
+        }
 
-            <div class="uni-content">
+        data.forEach(uni => {
 
-                <h3>${uni.name}</h3>
+            list.innerHTML += `
 
-                <p>📍 ${uni.city}</p>
+                <div class="uni-card">
 
-                <div class="uni-links">
+                    <img src="${uni.logo}" alt="شعار ${uni.name}">
 
-                    <a href="${uni.website}" target="_blank">
-                    🌐 الموقع
-                    </a>
+                    <div class="uni-content">
 
-                    
-            
-    
+                        <h3>${uni.name}</h3>
+
+                        <p>📍 ${uni.city}</p>
+
+                        <div class="uni-links">
+
+                            <a href="${uni.map}"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="map-btn">
+                                الخريطة
+                            </a>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
-            </div>
+            `;
 
-        </div>
+        });
 
-        `;
+    }
 
-    });
+
+    // عرض الجامعات الحكومية عند فتح الصفحة
+
+    showUniversities(
+        universities.filter(uni => uni.type === "public")
+    );
+
+
+    // تبديل حكومية / خاصة
+
+    function filterUniversities(type, button) {
+
+        const filtered = universities.filter(
+            uni => uni.type === type
+        );
+
+        showUniversities(filtered);
+
+
+        document.querySelectorAll(".university-tab").forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+    }
 
 }
-
-showUniversities(universities);
-
-
-
-
-
-
 
 
 
@@ -134,59 +392,71 @@ button.classList.add("active");
 
 }
 
-
 const darkBtn = document.getElementById("darkModeToggle");
 
-// إذا كان الوضع الليلي محفوظ
-if(localStorage.getItem("theme") === "dark"){
-    document.body.classList.add("dark-mode");
-    darkBtn.innerHTML = "☀️";
-}
+if (darkBtn) {
 
-darkBtn.addEventListener("click", function(){
+    if (localStorage.getItem("theme") === "dark") {
 
-    document.body.classList.toggle("dark-mode");
+        document.body.classList.add("dark-mode");
 
-    if(document.body.classList.contains("dark-mode")){
         darkBtn.innerHTML = "☀️";
-        localStorage.setItem("theme","dark");
-    }else{
-        darkBtn.innerHTML = "🌙";
-        localStorage.setItem("theme","light");
+
     }
 
-});
+    darkBtn.addEventListener("click", function () {
 
+        document.body.classList.toggle("dark-mode");
 
+        if (document.body.classList.contains("dark-mode")) {
+
+            darkBtn.innerHTML = "☀️";
+
+            localStorage.setItem("theme", "dark");
+
+        } else {
+
+            darkBtn.innerHTML = "🌙";
+
+            localStorage.setItem("theme", "light");
+
+        }
+
+    });
+
+}
 
 
 const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll", () => {
+if (topBtn) {
 
-    if(window.scrollY > 300){
+    window.addEventListener("scroll", () => {
 
-        topBtn.style.display = "block";
+        if (window.scrollY > 300) {
 
-    }else{
+            topBtn.style.display = "block";
 
-        topBtn.style.display = "none";
+        } else {
 
-    }
+            topBtn.style.display = "none";
 
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
+        }
 
     });
 
-});
+
+    topBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
 
 
 const messages = [
@@ -205,28 +475,36 @@ const messages = [
 
 const loadingText = document.getElementById("loadingText");
 
-let index = 0;
+if (loadingText) {
 
-const changeMessage = setInterval(() => {
+    let index = 0;
 
-    index = (index + 1) % messages.length;
+    const changeMessage = setInterval(() => {
 
-    loadingText.textContent = messages[index];
+        index = (index + 1) % messages.length;
 
-}, 1000);
+        loadingText.textContent = messages[index];
 
-window.addEventListener("load", () => {
+    }, 1600);
 
-    clearInterval(changeMessage);
 
-    setTimeout(() => {
+    window.addEventListener("load", () => {
 
-        document.getElementById("loader").style.display = "none";
+        clearInterval(changeMessage);
 
-    }, 1200);
+        setTimeout(() => {
 
-});
+            const loader = document.getElementById("loader");
 
+            if (loader) {
+                loader.style.display = "none";
+            }
+
+        }, 1200);
+
+    });
+
+}
 
 
 
