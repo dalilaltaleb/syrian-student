@@ -167,6 +167,34 @@ body.dark-mode footer a{
 }
 
 
+/* ===========================
+   Services - Dark Mode
+=========================== */
+
+
+
+body.dark-mode .services-header p{
+    color:#ccc;
+}
+
+body.dark-mode .service-card{
+    background:#1e1e1e;
+    border-color:#333;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+body.dark-mode .service-card h3{
+    color:#fff;
+}
+
+body.dark-mode .service-card p{
+    color:#bbb;
+}
+
+body.dark-mode .service-icon{
+    background:#292929;
+}
+
 
 
 /* ===========================
@@ -383,7 +411,6 @@ nav a:hover{
     margin:80px 0 50px;
 }
 
-
 /* ===========================
    Services
 =========================== */
@@ -392,37 +419,125 @@ nav a:hover{
     width:90%;
     max-width:1200px;
     margin:100px auto;
-    padding: 50px 60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:60px;
-    flex-wrap:wrap;
+    padding:60px 20px;
 }
 
-.services-content{
-    flex:1;
-}
-
-.services-content p{
-    font-size:18px;
-    line-height:2;
-    color:#555;
-    margin:20px 0 35px;
-}
-
-.services-image{
-    flex:1;
+.services-header{
     text-align:center;
+    max-width:750px;
+    margin:0 auto 50px;
 }
 
-.services-image img{
-    width:100%;
-    max-width:400px;
-    height: auto;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+.services-header .section-title{
+    margin-bottom:15px;
 }
+
+.services-header p{
+    font-size:17px;
+    line-height:1.9;
+    color:#666;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:20px;
+}
+
+.service-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:22px;
+    background:#fff;
+    border-radius:18px;
+    border:1px solid #eee;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    transition:.3s ease;
+    direction:rtl;
+}
+
+.service-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.service-icon{
+    min-width:62px;
+    width:62px;
+    height:62px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    background:#f1f7f4;
+
+    flex-shrink:0;
+}
+
+.service-icon svg{
+    width:31px;
+    height:31px;
+
+    fill:none;
+    stroke:#287a55;
+    stroke-width:1.7;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.service-card h3{
+    margin:0 0 7px;
+    font-size:18px;
+}
+
+.service-card p{
+    margin:0;
+    color:#666;
+    font-size:14px;
+    line-height:1.8;
+}
+
+
+/* ===========================
+   Services - Mobile
+=========================== */
+
+@media (max-width:768px){
+
+    .services{
+        width:92%;
+        padding:40px 0;
+        margin:70px auto;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .service-card{
+        padding:18px;
+    }
+
+    .service-icon{
+        min-width:52px;
+        width:52px;
+        height:52px;
+        font-size:25px;
+    }
+
+    .service-card h3{
+        font-size:16px;
+    }
+
+    .service-card p{
+        font-size:13px;
+    }
+}
+
 
 
  /* ===========================
@@ -1054,24 +1169,30 @@ body.dark-mode .contact-register-btn:hover {
 =========================== */
 
 .about{
+     width:90%;
+    max-width:1200px;
+    margin:100px auto;
+    padding: 50px 60px;
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
     gap:60px;
-    padding:50px 60px;
     flex-wrap:wrap;
-    background:white;
+
 }
 
 .about-image img{
     width:100%;
     max-width:400px;
+    height: auto;
     border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
+    
+
 
 .about-content{
-    max-width:550px;
+    flex: 1;
 }
 
 .about-content p{
