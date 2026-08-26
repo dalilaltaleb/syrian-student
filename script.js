@@ -164,7 +164,7 @@ const universities = [
 
 {
     name: "جامعة الجزيرة الخاصة",
-    city: "درعا ",
+    city: "دير الزور ",
     logo: "images/logos/ipu.webp",  
     map: "https://www.google.com/maps/search/?api=1&query=جامعة+الجزيرة+الخاصة",
     type: "private"

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dalilaltaleb.github.io/syrian-student/sitemap.xml
+Sitemap: https://syrian-student.vercel.app/sitemap.xml
