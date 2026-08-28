@@ -460,7 +460,7 @@ if (list) {
     `;
 
 });
-    }
+    
 
 function showUniversityDetails(name) {
 
@@ -551,7 +551,7 @@ function closeUniversityDetails() {
 
     }
 
-
+}
 
 
 
