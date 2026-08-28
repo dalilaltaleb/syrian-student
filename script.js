@@ -8,13 +8,22 @@
 
 const universities = [
 
-    {
-        name: "جامعة حلب",
-        city: "حلب",
-        logo: "images/logos/alepun.webp",
-        map: "https://www.google.com/maps/search/?api=1&query=جامعة+حلب",
-        type: "public"
-    },
+  {
+    name: "جامعة حلب",
+    city: "حلب",
+    logo: "images/logos/alepun.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+حلب",
+    type: "public",
+
+    majors: [
+        "الطب البشري",
+        "طب الأسنان",
+        "الصيدلة",
+        "الهندسة المعلوماتية",
+        "الهندسة المدنية",
+        "الهندسة المعمارية"
+    ]
+},
 
     {
         name: "جامعة دمشق",
@@ -164,7 +173,7 @@ const universities = [
 
 {
     name: "جامعة الجزيرة الخاصة",
-    city: "دير الزور ",
+    city: "درعا  ",
     logo: "images/logos/ipu.webp",  
     map: "https://www.google.com/maps/search/?api=1&query=جامعة+الجزيرة+الخاصة",
     type: "private"
@@ -282,6 +291,114 @@ const universities = [
     type: "private"
 },
 
+{
+    name: "الأكاديمية العربية للأعمال الإلكترونية",
+    city: "حلب",
+    logo: "images/logos/arab.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=الأكاديمية+العربية+للأعمال+الإلكترونية",
+    type: "private"
+},
+
+{
+    name: "الأكاديمية العربية للعلوم والتكنولوجيا والنقل",
+    city: "اللاذقية",
+    logo: "images/logos/aast.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=الأكاديمية+العربية+للعلوم+والتكنولوجيا+والنقل+اللاذقية",
+    type: "private"
+},
+
+{
+    name: "جامعة الشام العالمية",
+    city: "حلب",
+    logo: "images/logos/shamu.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الشام+العالمية",
+    type: "private"
+},
+
+{
+    name: "جامعة الحياة للعلوم الطبية",
+    city: "إدلب",
+    logo: "images/logos/maduc.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الحياة+للعلوم+الطبية+إدلب",
+    type: "private"
+},
+
+{
+    name: "جامعة آرام للعلوم",
+    city: "حلب",
+    logo: "images/logos/aram.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+آرام+للعلوم+حلب",
+    type: "private"
+},
+
+{
+    name: "الجامعة السورية للعلوم والتكنولوجيا",
+    city: "إدلب",
+    logo: "images/logos/ulu.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+السورية+للعلوم+والتكنولوجيا+إدلب",
+    type: "private"
+},
+
+{
+    name: "جامعة المعالي الخاصة",
+    city: "حلب",
+    logo: "images/logos/almaail.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+المعالي+حلب",
+    type: "private"
+},
+
+{
+    name: "جامعة الزهراء",
+    city: "حلب",
+    logo: "images/logos/alzh.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الزهراء+حلب",
+    type: "private"
+},
+
+{
+    name: "جامعة باشاك شهير",
+    city: "حلب-الباب",
+    logo: "images/logos/bss.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+باشاك+شهير+حلب",
+    type: "private"
+},
+
+{
+    name: "جامعة الأمانوس",
+    city: "حلب",
+    logo: "images/logos/amanus.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الأمانوس+عفرين",
+    type: "private"
+},
+
+{
+    name: "جامعة الرواد للعلوم والتقانة",
+    city: "حلب",
+    logo: "images/logos/alrowad.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+الرواد+للعلوم+والتقانة+حلب",
+    type: "private"
+},
+
+{
+    name: "جامعة المعارف للعلوم التطبيقية",
+    city: "إدلب",
+    logo: "images/logos/mas.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=جامعة+المعارف+للعلوم+التطبيقية+إدلب",
+    type: "private"
+},
+
+{
+    name: "الجامعة الإسلامية",
+    city: "إدلب",
+    logo: "images/logos/iuis.webp",
+    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+الإسلامية+إدلب",
+    type: "private"
+},
+
+
+
+
+
 
 
 
@@ -308,40 +425,102 @@ if (list) {
             return;
         }
 
+
         data.forEach(uni => {
 
-            list.innerHTML += `
+    list.innerHTML += `
 
-                <div class="uni-card">
+        <div class="uni-card"
+             onclick="showUniversityDetails('${uni.name}')">
 
-                    <img src="${uni.logo}" alt="شعار ${uni.name}">
+            <img src="${uni.logo}" alt="شعار ${uni.name}">
 
-                    <div class="uni-content">
+            <div class="uni-content">
 
-                        <h3>${uni.name}</h3>
+                <h3>${uni.name}</h3>
 
-                        <p>📍 ${uni.city}</p>
+                <p>📍 ${uni.city}</p>
 
-                        <div class="uni-links">
+                <div class="uni-links">
 
-                            <a href="${uni.map}"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="map-btn">
-                                الخريطة
-                            </a>
-
-                        </div>
-
-                    </div>
+                    <a href="${uni.map}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="map-btn"
+                       onclick="event.stopPropagation();">
+                        الخريطة
+                    </a>
 
                 </div>
 
+            </div>
+
+        </div>
+
+    `;
+
+});
+    }
+
+function showUniversityDetails(name) {
+
+    const uni = universities.find(u => u.name === name);
+
+    if (!uni) return;
+
+    document.getElementById("modal-logo").src = uni.logo;
+
+    document.getElementById("modal-logo").alt =
+        "شعار " + uni.name;
+
+    document.getElementById("modal-name").textContent =
+        uni.name;
+
+    document.getElementById("modal-city").textContent =
+        "📍 " + uni.city;
+
+    document.getElementById("modal-map").href =
+        uni.map;
+
+    const majorsContainer =
+        document.getElementById("modal-majors");
+
+    majorsContainer.innerHTML = "";
+
+    if (uni.majors && uni.majors.length > 0) {
+
+        uni.majors.forEach(major => {
+
+            majorsContainer.innerHTML += `
+                <div class="major-item">
+                    🎓 ${major}
+                </div>
             `;
 
         });
 
+    } else {
+
+        majorsContainer.innerHTML = `
+            <p class="no-majors">
+                سيتم إضافة التخصصات قريبًا.
+            </p>
+        `;
+
     }
+
+    document.getElementById("university-modal")
+        .classList.add("show");
+}
+
+
+function closeUniversityDetails() {
+
+    document.getElementById("university-modal")
+        .classList.remove("show");
+
+}}
+      
 
 
     // عرض الجامعات الحكومية عند فتح الصفحة
@@ -372,7 +551,7 @@ if (list) {
 
     }
 
-}
+
 
 
 
@@ -505,10 +684,3 @@ if (loadingText) {
     });
 
 }
-
-
-
-
-
-
-
