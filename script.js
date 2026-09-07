@@ -409,15 +409,6 @@ const universities = [
     ]
 },
 
-{
-    name: "الجامعة الوطنية للعلوم الدفاعية",
-    city: "دمشق",
-    logo: "images/logos/defense.webp",
-    map: "https://www.google.com/maps/search/?api=1&query=الجامعة+الوطنية+للعلوم+الدفاعية",
-    type: "public",
-    majors: []
-},
-
 
 {
     name: "جامعة ماري الخاصة",
