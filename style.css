@@ -655,7 +655,7 @@ nav a:hover{
 
     color:#2F6F8F;
 
-    font-size:17px;
+    font-size:14px;
 
     line-height:1.5;
 
@@ -716,7 +716,7 @@ nav a:hover{
 
 /* ===========================
    الموبايل
-
+=========================== */
 
 
 @media (max-width:768px){
@@ -800,7 +800,7 @@ nav a:hover{
 
 }
   
-=========================== */
+
 
 
 
@@ -1295,93 +1295,6 @@ body.dark-mode .contact-register-btn:hover {
 
 }
 
-
-/* ===========================
-   من نحن
-=========================== */
-
-.about{
-     width:90%;
-    max-width:1200px;
-    margin:40px auto;
-    padding: 20px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:30px;
-    flex-wrap:wrap;
-
-}
-
-.about-image img{
-    width:100%;
-    max-width:400px;
-    height: auto;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-    
-
-
-.about-content{
-    flex: 1;
-}
-
-.about-content p{
-    font-size:18px;
-    color:#555;
-    line-height:2;
-    margin:20px 0 30px;
-}
-
-.about-btn{
-    display:inline-block;
-    background:#4A90E2;
-    color:white;
-    text-decoration:none;
-    padding:14px 30px;
-    border-radius:30px;
-    transition:.3s;
-}
-
-.about-btn:hover{
-    background:#357ABD;
-    transform:translateY(-3px);
-}
-
-.drop-btn{
-    background:none;
-    border:none;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-.dropdown{
-    position:relative;
-    display:inline-block;
-}
-
-.dropdown-content{
-    display:none;
-    position:absolute;
-    right:0;
-    background:white;
-    min-width:220px;
-    border-radius:10px;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-.dropdown-content a{
-    display:block;
-    padding:15px;
-    color:#333;
-    text-decoration:none;
-}
-
-.dropdown-content a:hover{
-    background:#F5F9FC;
-}
 
 
 /*==============================
