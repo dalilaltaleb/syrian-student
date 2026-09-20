@@ -1434,3 +1434,23 @@ if (loadingText) {
     });
 
 }
+
+
+/* ===========================
+   Mobile Menu
+=========================== */
+
+const menuToggle = document.querySelector("#menuToggle");
+const mainNav = document.querySelector("#mainNav");
+
+// فتح وإغلاق القائمة
+menuToggle.addEventListener("click", () => {
+
+    mainNav.classList.toggle("active");
+
+    // تحديث حالة القائمة
+    const isOpen = mainNav.classList.contains("active");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+});

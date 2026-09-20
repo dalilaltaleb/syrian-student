@@ -209,7 +209,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 60px;
+    padding:15px 40px;
     background:#163247;
     backdrop-filter:blur(10px);
     z-index:1000;
@@ -270,6 +270,27 @@ nav a:hover{
     color:#027ff3;
     
 }
+
+/* ===========================
+   Mobile Menu Button
+=========================== */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 28px;
+    padding: 8px 14px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 
 /* ===========================
    Hero
@@ -1394,32 +1415,6 @@ body.dark-mode .contact-register-btn:hover {
 
 }
 
-/* أول 3 مراكز */
-
-.gold{
-
-    background:#fff7da;
-
-    font-weight:bold;
-
-}
-
-.silver{
-
-    background:#f3f3f3;
-
-    font-weight:bold;
-
-}
-
-.bronze{
-
-    background:#fff1e4;
-
-    font-weight:bold;
-
-}
-
 
 .documents{
 
@@ -1838,5 +1833,61 @@ body.dark-mode .no-results {
 
 
 
+/* ===========================
+   Fix Mobile Header
+=========================== */
 
+@media (max-width: 768px) {
 
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: auto !important;
+        min-height: 70px;
+        padding: 12px 20px !important;
+        direction: rtl !important;
+        box-sizing: border-box;
+    }
+
+    .logo {
+        font-size: 18px !important;
+        white-space: nowrap;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        order: 2;
+        font-size: 24px;
+        padding: 6px 12px;
+    }
+
+    /* إخفاء القائمة بشكل افتراضي */
+    header nav {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 10px 0;
+        background: #163247;
+        box-sizing: border-box;
+    }
+
+    /* إظهار القائمة عند الضغط */
+    header nav.active {
+        display: flex !important;
+    }
+
+    header nav a {
+        width: 100%;
+        padding: 12px 0;
+        text-align: center;
+    }
+
+    
+}
