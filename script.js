@@ -1435,22 +1435,32 @@ if (loadingText) {
 
 }
 
-
-/* ===========================
-   Mobile Menu
-=========================== */
+// ===========================
+// Mobile Menu Animation
+// ===========================
 
 const menuToggle = document.querySelector("#menuToggle");
 const mainNav = document.querySelector("#mainNav");
 
-// فتح وإغلاق القائمة
-menuToggle.addEventListener("click", () => {
+if (menuToggle && mainNav) {
 
-    mainNav.classList.toggle("active");
+    menuToggle.addEventListener("click", () => {
 
-    // تحديث حالة القائمة
-    const isOpen = mainNav.classList.contains("active");
+        mainNav.classList.toggle("active");
 
-    menuToggle.setAttribute("aria-expanded", isOpen);
+        const isOpen = mainNav.classList.contains("active");
 
-});
+        // تغيير شكل الزر
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+
+        // تحديث معلومات الوصول
+        menuToggle.setAttribute("aria-expanded", isOpen);
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "إغلاق القائمة" : "فتح القائمة"
+        );
+
+    });
+
+}

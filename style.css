@@ -291,6 +291,19 @@ nav a:hover{
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* Dark Mode للقائمة المنسدلة */
+
+body.dark-mode nav {
+    background: #1e293b;
+}
+
+body.dark-mode nav a {
+    color: #f1f5f9;
+}
+
+body.dark-mode nav a:hover {
+    background: #334155;
+}
 
 /* ===========================
    Hero
@@ -1832,19 +1845,18 @@ body.dark-mode .no-results {
 }
 
 
-
 /* ===========================
-   Fix Mobile Header
+   Mobile Menu Animation
 =========================== */
 
 @media (max-width: 768px) {
 
+    /* Header */
     header {
         display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
-        height: auto !important;
         min-height: 70px;
         padding: 12px 20px !important;
         direction: rtl !important;
@@ -1856,16 +1868,22 @@ body.dark-mode .no-results {
         white-space: nowrap;
     }
 
+    /* زر القائمة */
     .menu-toggle {
         display: block !important;
-        order: 2;
         font-size: 24px;
         padding: 6px 12px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
     }
 
-    /* إخفاء القائمة بشكل افتراضي */
+    .menu-toggle:active {
+        transform: scale(0.9);
+    }
+
+    /* القائمة - مغلقة */
     header nav {
-        display: none !important;
+        display: flex !important;
         position: absolute;
         top: 100%;
         right: 0;
@@ -1873,21 +1891,55 @@ body.dark-mode .no-results {
         flex-direction: column;
         align-items: center;
         gap: 0;
-        padding: 10px 0;
+        padding: 0;
         background: #163247;
-        box-sizing: border-box;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            max-height 0.35s ease,
+            opacity 0.25s ease,
+            padding 0.35s ease;
     }
 
-    /* إظهار القائمة عند الضغط */
+    /* القائمة - مفتوحة */
     header nav.active {
-        display: flex !important;
+        max-height: 400px;
+        padding: 10px 0;
+        opacity: 1;
+        visibility: visible;
     }
 
+    /* روابط القائمة */
     header nav a {
         width: 100%;
         padding: 12px 0;
         text-align: center;
+        font-size: 16px;
     }
 
-    
+    header nav a:hover {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+   
+
+    /* القائمة عند التمرير */
+    header.scrolled nav {
+        background: white;
+    }
+
+    header.scrolled .menu-toggle {
+        color: #2c3e50;
+        border-color: rgba(44, 62, 80, 0.3);
+    }
+
+     /* الوضع الليلي */
+    header nav .dark-btn {
+        margin: 5px 0;
+    }
 }
