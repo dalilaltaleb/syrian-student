@@ -56,7 +56,7 @@ body.dark-mode .ranking{
 }
 
 body.dark-mode .section-title{
-    color:#6cb4ff;
+    color: #b9a779;
 }
 
 body.dark-mode p{
@@ -128,11 +128,11 @@ body.dark-mode footer a{
 }
 
 .dark-mode .uni-links a{
-    color:#4db8ff;
+    color: #b9a779;
 }
 
 .dark-mode .uni-links a:hover{
-    color:#7fd3ff;
+    color:#96a2a9;
 }
 
 .dark-mode #search{
@@ -162,7 +162,7 @@ body.dark-mode footer a{
 
     background:#1f1f1f;
     color:#fff;
-    border-right:5px solid #4A90E2;
+    border-right:5px solid  #b9a779;;
 
 }
 
@@ -210,7 +210,7 @@ header{
     justify-content:space-between;
     align-items:center;
     padding:15px 40px;
-    background:#163247;
+    background:#054239;
     backdrop-filter:blur(10px);
     z-index:1000;
     transition:.3s;
@@ -218,12 +218,12 @@ header{
 }
 
 header.scrolled{
-    background:white;
+    background: white;
     box-shadow:0 3px 15px rgba(0,0,0,.1);
 }
 
 .logo{
-    color:white;
+    color: #b9a779;
     font-size:25px;
     font-weight:bold;
 }
@@ -231,7 +231,7 @@ header.scrolled{
 
 
 header.scrolled .logo{
-    color:#2F6F8F;
+    color: #b9a779;
 
 }
 
@@ -261,13 +261,13 @@ nav a{
 }
 
 header.scrolled nav a{
-    color:#086bc6;
+    color: #b9a779;
     
 
 }
 
 nav a:hover{
-    color:#027ff3;
+    color: #acacac;
     
 }
 
@@ -294,7 +294,7 @@ nav a:hover{
 /* Dark Mode للقائمة المنسدلة */
 
 body.dark-mode nav {
-    background: #1e293b;
+    background: #1e1e1e;
 }
 
 body.dark-mode nav a {
@@ -360,7 +360,7 @@ body.dark-mode nav a:hover {
 
 .hero-content span{
 
-    color:#2d9cff;
+    color: #b9a779;
 
 }
 
@@ -376,32 +376,6 @@ body.dark-mode nav a:hover {
 
 
 
-.btn-secondary{
-
-    border:2px solid white;
-
-    color:white;
-
-    padding:14px 34px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    font-size:18px;
-
-    transition:.3s;
-
-}
-
-.btn-secondary:hover{
-
-    background:white;
-
-    color:#183b56;
-
-}
-
 
 
 /* ===========================
@@ -411,7 +385,7 @@ body.dark-mode nav a:hover {
 .section-title{
     text-align:center;
     font-size:38px;
-    color:#2F6F8F;
+    color: #b9a779;
     margin:80px 0 50px;
 }
 
@@ -657,7 +631,7 @@ body.dark-mode nav a:hover {
 
     margin:5px 0 5px;
 
-    color:#2F6F8F;
+    color: #b9a779;
 
     font-size:14px;
 
@@ -698,7 +672,7 @@ body.dark-mode nav a:hover {
 
     border-radius:20px;
 
-    background:#163247;
+    background: #054239;
 
     color:white;
 
@@ -711,7 +685,7 @@ body.dark-mode nav a:hover {
 
 .uni-links a:hover{
 
-    background:#2d9cff;
+    background:rgb(121, 118, 118)
 
 }
 
@@ -821,9 +795,9 @@ body.dark-mode nav a:hover {
 }
 
 .university-tab {
-    border: 2px solid #183b56;
+    border: 2px solid  #054239;
     background: white;
-    color: #183b56;
+    color:  #054239;
     padding: 12px 25px;
     border-radius: 30px;
     font-size: 16px;
@@ -834,7 +808,7 @@ body.dark-mode nav a:hover {
 
 .university-tab:hover,
 .university-tab.active {
-    background: #183b56;
+    background:  #054239;
     color: white;
 }
 
@@ -912,7 +886,7 @@ body.dark-mode nav a:hover {
 }
 
 #modal-name{
-    color:#2F6F8F;
+    color: #b9a779;
     margin:10px 0;
 }
 
@@ -947,7 +921,7 @@ body.dark-mode nav a:hover {
 
     padding:10px 20px;
 
-    background:#163247;
+    background: #054239;
     color:white;
 
     text-decoration:none;
@@ -991,11 +965,13 @@ body.dark-mode nav a:hover {
 
     direction: rtl;
 
-    background: linear-gradient(
+      background: linear-gradient(
         135deg,
-        #071b33,
-        #0d3154
+        #020b16,
+        #054239
     );
+    
+    
 
     color: white;
 }
@@ -1014,7 +990,7 @@ body.dark-mode nav a:hover {
     font-size: 16px;
     font-weight: bold;
 
-    color: #f4bd43;
+    color: #b9a779;
 }
 
 .register-text h2 {
@@ -1073,7 +1049,7 @@ body.dark-mode nav a:hover {
 /* زر سجل الآن */
 
 .register-btn {
-    background: #f4bd43;
+    background: #b9a779;
     color: #172b3d;
 }
 
@@ -1136,14 +1112,14 @@ body.dark-mode .register-banner {
     background: linear-gradient(
         135deg,
         #020b16,
-        #071d32
+        #054239
     );
 
     color: #ffffff;
 }
 
 body.dark-mode .register-label {
-    color: #f4bd43;
+    color:  #b9a779;
 }
 
 body.dark-mode .register-text h2 {
@@ -1166,12 +1142,12 @@ body.dark-mode .register-note {
 /* زر سجّل الآن */
 
 body.dark-mode .register-btn {
-    background: #f4bd43;
+    background:  #b9a779;
     color: #111c27;
 }
 
 body.dark-mode .register-btn:hover {
-    background: #ffd36a;
+    background:  #b9a779;
 }
 
 
@@ -1215,7 +1191,7 @@ body.dark-mode .contact-register-btn:hover {
 
     border-radius:50%;
 
-    background:#2d3748;
+    background:  #054239;
 
     color:white;
 
@@ -1229,7 +1205,7 @@ body.dark-mode .contact-register-btn:hover {
 
 .footer-social a:hover{
 
-    background:#4A90E2;
+    background:#dadcdf;
     transform:translateY(-5px);
 
 }
@@ -1262,7 +1238,7 @@ body.dark-mode .contact-register-btn:hover {
 
 .footer{
 
-    background:#1f2937;
+    background:  #054239;
     color:#fff;
     padding:50px 10% 25px;
     text-align:center;
@@ -1317,7 +1293,7 @@ body.dark-mode .contact-register-btn:hover {
 
 .section-title h2{
     font-size:34px;
-    color:#183b56;
+    color: #b9a779;
     margin-bottom:10px;
 }
 
@@ -1338,7 +1314,7 @@ body.dark-mode .contact-register-btn:hover {
 .tab-btn{
 
     background:white;
-    border:2px solid #183b56;
+    border:2px solid  #054239 ;
     color:#183b56;
 
     padding:13px 30px;
@@ -1355,14 +1331,14 @@ body.dark-mode .contact-register-btn:hover {
 
 .tab-btn:hover{
 
-    background:#183b56;
+    background:  #054239;
     color:white;
 
 }
 
 .tab-btn.active{
 
-    background:#183b56;
+    background:  #054239;
     color:white;
 
 }
@@ -1392,7 +1368,7 @@ body.dark-mode .contact-register-btn:hover {
 
 .ranking-table thead{
 
-    background:#183b56;
+    background:  #054239;
     color:white;
 
 }
@@ -1460,7 +1436,7 @@ body.dark-mode .contact-register-btn:hover {
     margin-bottom:15px;
     padding:18px 20px;
     border-radius:10px;
-    border-right:5px solid #4A90E2;
+    border-right:5px solid  #b9a779;;
     box-shadow:0 3px 10px rgba(0,0,0,.08);
     font-size:17px;
     transition:.3s;
@@ -1494,7 +1470,7 @@ body.dark-mode .contact-register-btn:hover {
 
     border-radius:50%;
 
-    background:#2d9cff;
+    background:  #054239;
 
     color:white;
 
@@ -1514,7 +1490,7 @@ body.dark-mode .contact-register-btn:hover {
 
 #topBtn:hover{
 
-    background:#1b7ed6;
+    background:#1b7;
 
     transform:translateY(-4px);
 
@@ -1751,7 +1727,7 @@ body.dark-mode .university-modal-content {
 }
 
 body.dark-mode #modal-name {
-    color: #72b7d8;
+    color:  #b9a779;;
 }
 
 body.dark-mode #modal-city {
@@ -1759,7 +1735,7 @@ body.dark-mode #modal-city {
 }
 
 body.dark-mode .major-item {
-    background: #29485c;
+    background: #054239;
     color: #eeeeee;
 }
 
@@ -1772,11 +1748,11 @@ body.dark-mode .close-modal {
 }
 
 body.dark-mode .modal-map-btn {
-    background: #29485c;
+    background: #054239;
 }
 
 body.dark-mode .modal-map-btn:hover {
-    background: #3c82a8;
+    background: #054239;
 }
 
 
@@ -1892,7 +1868,7 @@ body.dark-mode .no-results {
         align-items: center;
         gap: 0;
         padding: 0;
-        background: #163247;
+        background: #054239;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 
         max-height: 0;
@@ -1934,7 +1910,7 @@ body.dark-mode .no-results {
     }
 
     header.scrolled .menu-toggle {
-        color: #2c3e50;
+        color:  #b9a779;
         border-color: rgba(44, 62, 80, 0.3);
     }
 
