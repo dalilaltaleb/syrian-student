@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>لوحة الإدارة | دليل الطالب السوري</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .dashboard {
+            max-width: 1000px;
+            margin: 100px auto 40px;
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 15px;
+        }
+
+        .dashboard-header h1 {
+            margin: 0;
+        }
+
+        .logout-btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 10px;
+            background: #dc2626;
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        /* تبويبات الإدارة */
+
+        .dashboard-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-tab {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #e5e7eb;
+            color: #333;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .dashboard-tab.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* الأقسام */
+
+        .dashboard-section {
+            display: none;
+        }
+
+        .dashboard-section.active {
+            display: block;
+        }
+
+        .admin-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+        }
+
+        .admin-card h2 {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .admin-card label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+        }
+
+        .admin-card input,
+        .admin-card select,
+        .admin-card textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .admin-card textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .add-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        .coming-soon {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        #dashboard-message {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .rankings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.ranking-info {
+    flex: 1;
+}
+
+.ranking-info strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ranking-info span {
+    font-size: 14px;
+    color: #777;
+}
+
+.ranking-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-ranking,
+.delete-ranking {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.edit-ranking {
+    background: #f59e0b;
+    color: white;
+}
+
+.delete-ranking {
+    background: #dc2626;
+    color: white;
+}
+
+body.dark-mode .ranking-item {
+    border-color: #444;
+}
+
+body.dark-mode .ranking-info span {
+    color: #aaa;
+}
+
+   .documents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.document-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.document-item strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.document-item p {
+    margin: 0;
+    color: #777;
+}
+
+.document-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.edit-document,
+.delete-document {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.edit-document {
+    background: #f59e0b;
+    color: white;
+}
+
+.delete-document {
+    background: #dc2626;
+    color: white;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.service-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.service-item strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.service-item p {
+    margin: 0 0 8px;
+    color: #777;
+}
+
+.service-item span {
+    font-size: 14px;
+    color: #888;
+}
+
+.service-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.edit-service,
+.delete-service {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.edit-service {
+    background: #f59e0b;
+    color: white;
+}
+
+.delete-service {
+    background: #dc2626;
+    color: white;
+}
+
+/* =========================
+   Registration Dashboard
+========================= */
+
+#registration-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    direction: rtl;
+    box-sizing: border-box;
+}
+
+
+/* العنوان */
+
+#registration-section h2 {
+    margin: 0 0 28px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 26px;
+    color: #1f2937;
+}
+
+
+/* النموذج */
+
+#registration-section .dashboard-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* العناوين */
+
+#registration-section .dashboard-form label {
+    margin-top: 12px;
+    margin-bottom: 3px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+
+/* الحقول */
+
+#registration-section .dashboard-form input,
+#registration-section .dashboard-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #f9fafb;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+
+/* النصوص الطويلة */
+
+#registration-section .dashboard-form textarea {
+    min-height: 90px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+
+/* عند الضغط على الحقل */
+
+#registration-section .dashboard-form input:focus,
+#registration-section .dashboard-form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* أزرار الإضافة والتعديل والحذف */
+
+#registration-section .dashboard-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+
+#registration-section .dashboard-actions button {
+    border: none;
+    border-radius: 10px;
+    padding: 11px 22px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+/* إضافة */
+
+#registration-section #add-registration {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+
+/* تعديل */
+
+#registration-section #update-registration {
+    background: #f59e0b;
+    color: #ffffff;
+}
+
+
+/* حذف */
+
+#registration-section #delete-registration {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+
+/* تأثير الأزرار */
+
+#registration-section .dashboard-actions button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+
+/* رسالة العمليات */
+
+#registration-section #registration-message {
+    text-align: center;
+    margin: 15px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* قائمة البيانات */
+
+#registration-section #registration-list {
+    margin-top: 35px;
+}
+
+
+/* بطاقة التسجيل */
+
+#registration-section .registration-item {
+    padding: 20px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+
+/* عنوان السجل */
+
+#registration-section .registration-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #1f2937;
+}
+
+
+/* وصف السجل */
+
+#registration-section .registration-item p {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+
+/* أزرار السجل */
+
+#registration-section .registration-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+
+#registration-section .registration-actions button {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+#registration-section .registration-actions .edit-registration {
+    background: #f59e0b;
+    color: #ffffff;
+}
+
+
+#registration-section .registration-actions .delete-registration {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+
+#registration-section .registration-actions button:hover {
+    opacity: 0.9;
+}
+
+body.dark-mode .service-item {
+    border-color: #444;
+}
+
+body.dark-mode .service-item p,
+body.dark-mode .service-item span {
+    color: #aaa;
+}
+
+body.dark-mode .document-item {
+    border-color: #444;
+}
+
+body.dark-mode .document-item p {
+    color: #aaa;
+}
+
+@media (max-width: 600px) {
+
+    .ranking-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ranking-actions {
+        width: 100%;
+    }
+
+    .edit-ranking,
+    .delete-ranking {
+        flex: 1;
+    }
+}
+
+.universities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.university-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.university-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.university-info strong {
+    font-size: 17px;
+}
+
+.university-info span {
+    font-size: 14px;
+    color: #777;
+}
+
+.university-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-university,
+.delete-university {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.edit-university {
+    background: #f59e0b;
+    color: white;
+}
+
+.delete-university {
+    background: #dc2626;
+    color: white;
+}
+
+body.dark-mode .university-item {
+    border-color: #444;
+}
+
+body.dark-mode .university-info span {
+    color: #aaa;
+}
+
+@media (max-width: 600px) {
+
+    .university-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .university-actions {
+        width: 100%;
+    }
+
+    .edit-university,
+    .delete-university {
+        flex: 1;
+    }
+
+} 
+        body.dark-mode .admin-card {
+            background: #1e1e1e;
+            color: white;
+        }
+
+        body.dark-mode .dashboard-tab {
+            background: #2a2a2a;
+            color: white;
+        }
+
+        body.dark-mode .dashboard-tab.active {
+            background: #2563eb;
+        }
+
+        body.dark-mode .admin-card input,
+        body.dark-mode .admin-card select,
+        body.dark-mode .admin-card textarea {
+            background: #2a2a2a;
+            color: white;
+            border-color: #444;
+        }
+
+        body.dark-mode .coming-soon {
+            color: #bbb;
+        }
+
+        @media (max-width: 600px) {
+
+            .dashboard {
+                margin-top: 70px;
+            }
+
+            .dashboard-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .dashboard-tabs {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .dashboard-tab {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <!-- رأس لوحة التحكم -->
+
+        <div class="dashboard-header">
+
+            <div>
+                <h1> لوحة الإدارة</h1>
+                <p>دليل الطالب السوري</p>
+            </div>
+
+            <button id="logout-btn" class="logout-btn">
+                تسجيل الخروج
+            </button>
+
+        </div>
+
+
+        <!-- تبويبات لوحة الإدارة -->
+
+        <div class="dashboard-tabs">
+
+            <button
+                class="dashboard-tab active"
+                data-section="universities-section">
+                 الجامعات
+            </button>
+
+            <button
+                class="dashboard-tab"
+                data-section="rankings-section">
+                 الترتيب
+            </button>
+
+            <button
+                class="dashboard-tab"
+                data-section="documents-section">
+                 الأوراق المطلوبة
+            </button>
+
+
+                <button
+                class="dashboard-tab"
+                data-section="registration-section">
+                التسجيل
+            </button>
+
+
+            <button
+                class="dashboard-tab"
+                data-section="services-section">
+                 الخدمات
+            </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- الجامعات -->
+        <!-- ========================= -->
+<section
+    id="universities-section"
+    class="dashboard-section active">
+
+    <!-- إضافة جامعة -->
+
+    <div class="admin-card">
+
+        <h2>➕ إضافة جامعة</h2>
+
+        <label for="university-name">
+            اسم الجامعة
+        </label>
+
+        <input
+            type="text"
+            id="university-name"
+            placeholder="مثال: جامعة حلب"
+        >
+
+        <label for="university-city">
+            المدينة
+        </label>
+
+        <input
+            type="text"
+            id="university-city"
+            placeholder="مثال: حلب"
+        >
+
+        <label for="university-logo">
+            مسار الشعار
+        </label>
+
+        <input
+            type="text"
+            id="university-logo"
+            placeholder="مثال: images/logos/aleppo.webp"
+        >
+
+        <label for="university-map">
+            رابط الخريطة
+        </label>
+
+        <input
+            type="url"
+            id="university-map"
+            placeholder="https://www.google.com/maps/..."
+        >
+
+        <label for="university-type">
+            نوع الجامعة
+        </label>
+
+        <select id="university-type">
+
+            <option value="public">
+                حكومية
+            </option>
+
+            <option value="private">
+                خاصة
+            </option>
+
+        </select>
+
+        <label for="university-majors">
+            التخصصات
+        </label>
+
+        <textarea
+            id="university-majors"
+            placeholder="اكتبي كل تخصص في سطر منفصل&#10;الطب&#10;الصيدلة&#10;التمريض&#10;الهندسة"
+        ></textarea>
+
+        <button
+            id="add-university"
+            class="add-btn">
+            ➕ إضافة الجامعة
+        </button>
+
+        <div id="dashboard-message"></div>
+
+    </div>
+
+
+    <!-- الجامعات الموجودة -->
+
+    <div class="admin-card">
+
+        <h2> الجامعات الموجودة</h2>
+
+        <div id="universities-list" class="universities-list">
+            جاري تحميل الجامعات...
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- الترتيب -->
+<!-- ========================= -->
+
+<section
+    id="rankings-section"
+    class="dashboard-section">
+
+    <div class="admin-card">
+
+        <h2> إضافة ترتيب جامعة</h2>
+
+        <label for="ranking-university">
+            اسم الجامعة
+        </label>
+
+        <input
+            type="text"
+            id="ranking-university"
+            placeholder="مثال: جامعة دمشق"
+        >
+
+        <label for="ranking-type">
+            نوع الجامعة
+        </label>
+
+        <select id="ranking-type">
+
+            <option value="public">
+                حكومية
+            </option>
+
+            <option value="private">
+                خاصة
+            </option>
+
+        </select>
+
+        <label for="ranking-position">
+            الترتيب المحلي
+        </label>
+
+        <input
+            type="number"
+            id="ranking-position"
+            min="1"
+            placeholder="مثال: 1"
+        >
+
+        <label for="ranking-world-rank">
+            الترتيب العالمي
+        </label>
+
+        <input
+            type="number"
+            id="ranking-world-rank"
+            min="1"
+            placeholder="مثال: 1500"
+        >
+
+        <button
+            id="add-ranking"
+            class="add-btn">
+            ➕ إضافة الترتيب
+        </button>
+
+        <div id="ranking-message"></div>
+
+    </div>
+
+    <!-- قائمة الترتيبات -->
+
+    <div class="admin-card">
+
+        <h2> الترتيبات الموجودة</h2>
+
+        <div id="rankings-list">
+            جاري تحميل الترتيبات...
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- ========================= -->
+        <!-- الأوراق المطلوبة -->
+        <!-- ========================= -->
+<section
+    id="documents-section"
+    class="dashboard-section">
+
+    <div class="admin-card">
+
+        <h2> إضافة ورقة مطلوبة</h2>
+
+        <label for="document-title">
+            اسم الورقة
+        </label>
+
+        <input
+            type="text"
+            id="document-title"
+            placeholder="مثال: صورة الشهادة الثانوية"
+        >
+         <label for="document-description">
+            الوصف
+        </label>
+
+        <textarea
+            id="document-description"
+            rows="3"
+            placeholder="الوصف"
+        ></textarea>
+
+        <button
+            id="add-document"
+            class="add-btn">
+            ➕ إضافة الورقة
+        </button>
+
+        <div id="document-message"></div>
+
+    </div>
+
+
+    <div class="admin-card">
+
+        <h2> الأوراق الموجودة</h2>
+
+        <div id="documents-list">
+            جاري تحميل الأوراق...
+        </div>
+
+    </div>
+
+</section>
+ 
+<!-- =========================
+     Registration
+========================= -->
+
+<section
+    id="registration-section"
+    class="dashboard-section">
+
+    <h2> قسم التسجيل</h2>
+
+    <div class="dashboard-form">
+
+        <label for="registration-label">
+            العنوان الصغير
+        </label>
+
+        <input
+            type="text"
+            id="registration-label"
+            
+        >
+
+
+        <label for="registration-title">
+            العنوان الرئيسي
+        </label>
+
+        <input
+            type="text"
+            id="registration-title"
+            
+        >
+
+
+        <label for="registration-description">
+            الوصف
+        </label>
+
+        <textarea
+            id="registration-description"
+            rows="3"
+            >
+        </textarea>
+
+
+        <label for="registration-highlight">
+            النص المميز
+        </label>
+
+        <input
+            type="text"
+            id="registration-highlight"
+            
+        >
+
+
+        <label for="registration-note">
+            الملاحظة
+        </label>
+
+        <textarea
+            id="registration-note"
+            rows="3"
+            >
+        </textarea>
+
+
+        <label for="registration-whatsapp">
+            رابط واتساب
+        </label>
+
+        <input
+            type="text"
+            id="registration-whatsapp"
+            
+        >
+
+
+        <div class="dashboard-actions">
+
+    <button
+        id="add-registration"
+        type="button">
+        ➕ إضافة
+    </button>
+
+
+</div>
+
+        <p id="registration-message"></p>
+
+    </div>
+
+
+    <!-- عرض بيانات التسجيل -->
+
+    <div
+        id="registration-list"
+        class="dashboard-list">
+
+        جاري تحميل بيانات التسجيل...
+
+    </div>
+
+</section>
+        
+      <!-- ========================= -->
+<!-- الخدمات -->
+<!-- ========================= -->
+
+<section
+    id="services-section"
+    class="dashboard-section">
+
+    <div class="admin-card">
+
+        <h2> إضافة خدمة</h2>
+
+        <label for="service-title">
+            اسم الخدمة
+        </label>
+
+        <input
+            type="text"
+            id="service-title"
+            placeholder="مثال: التسجيل في الجامعات"
+        >
+
+        <label for="service-description">
+            وصف الخدمة
+        </label>
+
+        <textarea
+            id="service-description"
+            placeholder="اكتبي وصفًا مختصرًا للخدمة..."
+        ></textarea>
+
+        <label for="service-icon">
+            أيقونة الخدمة
+        </label>
+
+        <input
+            type="text"
+            id="service-icon"
+            placeholder="مثال: 🎓"
+        >
+
+        <button
+            id="add-service"
+            class="add-btn">
+            ➕ إضافة الخدمة
+        </button>
+
+        <div id="service-message"></div>
+
+    </div>
+
+
+    <div class="admin-card">
+
+        <h2> الخدمات الموجودة</h2>
+
+        <div id="services-list">
+            جاري تحميل الخدمات...
+        </div>
+
+    </div>
+
+</section>
+
+
+    </main>
+
+
+    <script type="module" src="admin-dashboard.js"></script>
+
+</body>
+
+</html>

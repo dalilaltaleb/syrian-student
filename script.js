@@ -1191,7 +1191,7 @@ if (list) {
                            
                            <a class="majors-btn"
                            onclick="event.stopPropagation();
-                           showUniversityDetails('${uni.name}'")>
+                           showUniversityDetails('${uni.name}')">
                               التخصصات
                               </a>
                         </div>
@@ -1398,7 +1398,7 @@ const messages = [
 
     "📚 نتمنى لك رحلة جامعية موفقة.",
 
-    "🎓 أهلاً بك في دليل الطالب السوري."
+    "🎓 أهلاً بك في تجمع الطلبة في سوريا."
 
 ];
 
@@ -1464,3 +1464,403 @@ if (menuToggle && mainNav) {
     });
 
 }
+
+// ================================
+// FIRESTORE | Rankings
+// ================================
+
+async function loadRankingsFromFirestore() {
+
+    try {
+
+        const { db } = await import("./firebase.js");
+
+        const {
+            collection,
+            getDocs
+        } = await import(
+            "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js"
+        );
+
+        const snapshot = await getDocs(
+            collection(db, "rankings")
+        );
+
+        const publicBody = document.querySelector(
+            "#public .ranking-table tbody"
+        );
+
+        const privateBody = document.querySelector(
+            "#private .ranking-table tbody"
+        );
+
+        if (!publicBody || !privateBody) return;
+
+        const publicRankings = [];
+        const privateRankings = [];
+
+        snapshot.forEach((docSnapshot) => {
+
+            const data = docSnapshot.data();
+
+            const item = {
+                university: data.university || "",
+                position: Number(data.position) || 0,
+                worldRank: Number(data.worldRank) || 0
+            };
+
+            if (data.type === "public") {
+                publicRankings.push(item);
+            }
+
+            if (data.type === "private") {
+                privateRankings.push(item);
+            }
+
+        });
+
+        publicRankings.sort(
+            (a, b) => a.position - b.position
+        );
+
+        privateRankings.sort(
+            (a, b) => a.position - b.position
+        );
+
+        function renderRankings(items, tbody) {
+
+            tbody.innerHTML = "";
+
+            items.forEach((item, index) => {
+
+                let medalClass = "";
+
+                if (index === 0) {
+                    medalClass = "gold";
+                } else if (index === 1) {
+                    medalClass = "silver";
+                } else if (index === 2) {
+                    medalClass = "bronze";
+                }
+
+                tbody.innerHTML += `
+                    <tr class="${medalClass}">
+                        <td>${item.position}</td>
+                        <td>${item.university}</td>
+                        <td>${item.worldRank}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        renderRankings(
+            publicRankings,
+            publicBody
+        );
+
+        renderRankings(
+            privateRankings,
+            privateBody
+        );
+
+        console.log(
+            "تم تحميل الترتيب من Firestore ✅"
+        );
+
+    } catch (error) {
+
+        console.error(
+            "خطأ في تحميل الترتيب:",
+            error
+        );
+
+    }
+}
+loadRankingsFromFirestore();
+
+// ================================
+// FIRESTORE | Documents
+// ================================
+
+async function loadDocumentsFromFirestore() {
+
+    try {
+
+        const { db } = await import("./firebase.js");
+
+        const {
+            collection,
+            getDocs
+        } = await import(
+            "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js"
+        );
+
+        const snapshot = await getDocs(
+            collection(db, "documents")
+        );
+
+        const documentsList =
+            document.querySelector(".documents-list");
+
+        if (!documentsList) return;
+
+        documentsList.innerHTML = "";
+
+        snapshot.forEach((docSnapshot) => {
+
+            const data = docSnapshot.data();
+
+            const li = document.createElement("li");
+
+            li.textContent = data.title || "";
+
+            documentsList.appendChild(li);
+
+        });
+
+        console.log(
+            "تم تحميل الوثائق من Firestore ✅"
+        );
+
+    } catch (error) {
+
+        console.error(
+            "خطأ في تحميل الوثائق:",
+            error
+        );
+
+    }
+}
+
+loadDocumentsFromFirestore();
+
+async function loadServicesFromFirestore() {
+    try {
+        const { db } = await import("./firebase.js");
+
+        const { collection, getDocs } = await import(
+            "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js"
+        );
+
+        const snapshot = await getDocs(
+            collection(db, "services")
+        );
+
+        const servicesContainer =
+            document.querySelector("#services .services-grid");
+
+        if (!servicesContainer) return;
+
+        // الخدمات الموجودة أصلًا في HTML
+        let cards = Array.from(
+            servicesContainer.querySelectorAll(".service-card")
+        );
+
+        // ترتيب الخدمات: service-1 ثم service-2... وبعدها الخدمات الجديدة
+        const services = Array.from(snapshot.docs).sort((a, b) => {
+            const aMatch = a.id.match(/^service-(\d+)$/);
+            const bMatch = b.id.match(/^service-(\d+)$/);
+
+            if (aMatch && bMatch) {
+                return Number(aMatch[1]) - Number(bMatch[1]);
+            }
+
+            if (aMatch) return -1;
+            if (bMatch) return 1;
+
+            return 0;
+        });
+
+        services.forEach((docSnapshot, index) => {
+            const data = docSnapshot.data();
+
+            let card = cards[index];
+
+            // إذا كانت الخدمة جديدة ولا توجد لها بطاقة HTML
+            if (!card && cards.length > 0) {
+                const template = cards[cards.length - 1];
+
+                card = template.cloneNode(true);
+
+                servicesContainer.appendChild(card);
+
+                cards.push(card);
+            }
+
+            if (!card) return;
+
+            const title = card.querySelector("h3");
+            const description = card.querySelector("p");
+            const icon =card.querySelector(".service-icon");
+
+            if (title) {
+                title.textContent = data.title || "";
+            }
+
+            if (description) {
+                description.textContent =
+                    data.description || "";
+            }
+            if (icon && data.icon) {
+                icon.innerHTML = data.icon;
+            }
+        });
+
+        console.log(
+            `تم تحميل ${services.length} خدمة من Firestore ✅`
+        );
+
+    } catch (error) {
+        console.error(
+            "خطأ في تحميل الخدمات:",
+            error
+        );
+    }
+}
+
+loadServicesFromFirestore();
+
+async function loadUniversitiesFromFirestore() {
+    try {
+        const { db } = await import("./firebase.js");
+
+        const { collection, getDocs } = await import(
+            "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js"
+        );
+
+        const snapshot = await getDocs(
+            collection(db, "universities")
+        );
+
+        const firestoreUniversities = [];
+
+        snapshot.forEach((docSnapshot) => {
+            const data = docSnapshot.data();
+
+            firestoreUniversities.push({
+                id: docSnapshot.id,
+                name: data.name || "",
+                city: data.city || "",
+                logo: data.logo || "",
+                map: data.map || "",
+                type: data.type || "",
+                majors: Array.isArray(data.majors)
+                    ? data.majors
+                    : []
+            });
+        });
+
+        if (firestoreUniversities.length === 0) {
+            console.warn("لا توجد جامعات في Firestore");
+            return;
+        }
+
+        universities.length = 0;
+        universities.push(...firestoreUniversities);
+
+        const publicTab = document.querySelector(
+    ".university-tab.active"
+);
+
+if (publicTab) {
+    publicTab.click();
+}
+
+        console.log(
+            `تم تحميل ${firestoreUniversities.length} جامعة من Firestore ✅`
+        );
+
+    } catch (error) {
+        console.error(
+            "خطأ في تحميل الجامعات من Firestore:",
+            error
+        );
+    }
+}
+
+loadUniversitiesFromFirestore();
+
+async function loadRegistrationFromFirestore() {
+    try {
+        const { db } = await import("./firebase.js");
+
+        const { doc, getDoc } = await import(
+            "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js"
+        );
+
+        const registrationRef = doc(
+            db,
+            "sitecontent",
+            "registration"
+        );
+
+        const snapshot = await getDoc(registrationRef);
+
+        if (!snapshot.exists()) {
+            console.warn(
+                "بيانات التسجيل غير موجودة في Firestore"
+            );
+            return;
+        }
+
+        const data = snapshot.data();
+
+        const label = document.querySelector(
+            ".register-label"
+        );
+
+        const title = document.querySelector(
+            "#register h2"
+        );
+
+        const description = document.querySelector(
+            "#register .register-text p:not(.register-note)"
+        );
+
+        const note = document.querySelector(
+            ".register-note"
+        );
+
+        const button = document.querySelector(
+            "#register .register-btn"
+        );
+
+        if (label) {
+            label.textContent = data.label || "";
+        }
+
+        if (title) {
+            title.textContent = data.title || "";
+        }
+
+        if (description) {
+            description.innerHTML = `
+                ${data.description || ""}
+                <br>
+                نساعدك في معرفة
+                <strong>${data.descriptionHighlight || ""}</strong>،
+                ونجيب عن جميع استفساراتك بكل وضوح.
+            `;
+        }
+
+        if (note) {
+            note.textContent = data.note || "";
+        }
+
+        if (button) {
+            button.href = data.whatsappUrl || "#";
+        }
+
+        console.log(
+            "تم تحميل قسم التسجيل من Firestore ✅"
+        );
+
+    } catch (error) {
+        console.error(
+            "خطأ في تحميل قسم التسجيل:",
+            error
+        );
+    }
+}
+
+loadRegistrationFromFirestore();

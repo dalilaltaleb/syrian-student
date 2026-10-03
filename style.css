@@ -105,6 +105,7 @@ body.dark-mode footer{
 }
 
 body.dark-mode footer a{
+    background: #0d0d0d;
     color:#ddd;
 }
 
