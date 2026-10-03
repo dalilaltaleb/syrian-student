@@ -549,6 +549,56 @@ body.dark-mode .document-item p {
         flex: 1;
     }
 }
+/* =========================
+   Registration - Mobile Fix
+========================= */
+
+#registration-section .registration-item {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+#registration-section .registration-item p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+#registration-section .registration-item strong,
+#registration-section .registration-item h3 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+@media (max-width: 600px) {
+
+    #registration-section {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    #registration-section h2 {
+        font-size: 22px;
+    }
+
+    #registration-section .registration-item {
+        padding: 16px;
+    }
+
+    #registration-section .registration-actions {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+    }
+
+    #registration-section .registration-actions button {
+        flex: 1;
+    }
+}
 
 .universities-list {
     display: flex;
@@ -584,16 +634,21 @@ body.dark-mode .document-item p {
 
 .university-actions {
     display: flex;
+    flex-direction: row;
+    direction: ltr;
     gap: 8px;
+    flex-shrink: 0;
 }
 
 .edit-university,
 .delete-university {
     border: none;
     padding: 8px 12px;
+    min-width: 85px;
     border-radius: 8px;
     cursor: pointer;
     font-family: inherit;
+    font-size: 13px;
 }
 
 .edit-university {
