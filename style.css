@@ -430,8 +430,10 @@ body.dark-mode nav a:hover {
     padding:22px;
     background:#fff;
     border-radius:18px;
+    border-right: 5px solid  #b9a779;
     border:1px solid #eee;
     box-shadow:0 8px 25px rgba(0,0,0,.07);
+      border-right: 5px solid  #b9a779;
     transition:.3s ease;
     direction:rtl;
 }
@@ -441,31 +443,7 @@ body.dark-mode nav a:hover {
     box-shadow:0 12px 30px rgba(0,0,0,.12);
 }
 
-.service-icon{
-    min-width:62px;
-    width:62px;
-    height:62px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-    background:#f1f7f4;
-
-    flex-shrink:0;
-}
-
-.service-icon svg{
-    width:31px;
-    height:31px;
-
-    fill:none;
-    stroke:#287a55;
-    stroke-width:1.7;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
 
 .service-card h3{
     margin:0 0 7px;
@@ -1437,12 +1415,17 @@ body.dark-mode .contact-register-btn:hover {
     margin-bottom:15px;
     padding:18px 20px;
     border-radius:10px;
-    border-right:5px solid  #b9a779;;
+    border-right: 4px solid  #b9a779;
     box-shadow:0 3px 10px rgba(0,0,0,.08);
     font-size:17px;
     transition:.3s;
 
 }
+
+
+
+
+
 
 .documents-list li:hover{
 

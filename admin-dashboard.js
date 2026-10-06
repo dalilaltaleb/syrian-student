@@ -1231,7 +1231,7 @@ async function editDocument(id) {
 
 
     if (!newTitle) return;
-    
+
      const newDescription =
         prompt("الوصف:");
 
@@ -1281,7 +1281,7 @@ loadDocuments();
 
 const serviceTitle = document.querySelector("#service-title");
 const serviceDescription = document.querySelector("#service-description");
-const serviceIcon = document.querySelector("#service-icon");
+
 
 const addServiceButton = document.querySelector("#add-service");
 const serviceMessage = document.querySelector("#service-message");
@@ -1294,7 +1294,7 @@ if (addServiceButton) {
 
         const title = serviceTitle.value.trim();
         const description = serviceDescription.value.trim();
-        const icon = serviceIcon.value.trim();
+        
 
         if (!title || !description) {
             serviceMessage.textContent = "⚠️ يرجى تعبئة اسم الخدمة والوصف";
@@ -1309,7 +1309,7 @@ if (addServiceButton) {
             await addDoc(collection(db, "services"), {
                 title: title,
                 description: description,
-                icon: icon
+                
             });
 
             serviceMessage.textContent = "✅ تمت إضافة الخدمة بنجاح";
@@ -1317,7 +1317,7 @@ if (addServiceButton) {
 
             serviceTitle.value = "";
             serviceDescription.value = "";
-            serviceIcon.value = "";
+        
 
             await loadServices();
 
@@ -1370,11 +1370,7 @@ async function loadServices() {
 
                 <p>${data.description}</p>
 
-                ${
-                    data.icon
-                        ? `<span>الأيقونة: ${data.icon}</span>`
-                        : ""
-                }
+                
 
                 <div class="service-actions">
 

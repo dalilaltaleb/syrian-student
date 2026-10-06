@@ -1651,12 +1651,16 @@ async function loadServicesFromFirestore() {
 
         if (!servicesContainer) return;
 
-        // الخدمات الموجودة أصلًا في HTML
-        let cards = Array.from(
-            servicesContainer.querySelectorAll(".service-card")
-        );
+        // نأخذ أول كرت كقالب فقط
+        const template =
+            servicesContainer.querySelector(".service-card");
 
-        // ترتيب الخدمات: service-1 ثم service-2... وبعدها الخدمات الجديدة
+        if (!template) return;
+
+        // نحذف جميع الكروت القديمة
+        servicesContainer.innerHTML = "";
+
+        // ترتيب الخدمات
         const services = Array.from(snapshot.docs).sort((a, b) => {
             const aMatch = a.id.match(/^service-(\d+)$/);
             const bMatch = b.id.match(/^service-(\d+)$/);
@@ -1671,27 +1675,16 @@ async function loadServicesFromFirestore() {
             return 0;
         });
 
-        services.forEach((docSnapshot, index) => {
+        // إنشاء كرت لكل خدمة موجودة فعلًا في Firestore
+        services.forEach((docSnapshot) => {
+
             const data = docSnapshot.data();
 
-            let card = cards[index];
-
-            // إذا كانت الخدمة جديدة ولا توجد لها بطاقة HTML
-            if (!card && cards.length > 0) {
-                const template = cards[cards.length - 1];
-
-                card = template.cloneNode(true);
-
-                servicesContainer.appendChild(card);
-
-                cards.push(card);
-            }
-
-            if (!card) return;
+            const card = template.cloneNode(true);
 
             const title = card.querySelector("h3");
             const description = card.querySelector("p");
-            const icon =card.querySelector(".service-icon");
+            
 
             if (title) {
                 title.textContent = data.title || "";
@@ -1701,9 +1694,10 @@ async function loadServicesFromFirestore() {
                 description.textContent =
                     data.description || "";
             }
-            if (icon && data.icon) {
-                icon.innerHTML = data.icon;
-            }
+
+            
+
+            servicesContainer.appendChild(card);
         });
 
         console.log(
@@ -1711,12 +1705,14 @@ async function loadServicesFromFirestore() {
         );
 
     } catch (error) {
+
         console.error(
             "خطأ في تحميل الخدمات:",
             error
         );
     }
 }
+
 
 loadServicesFromFirestore();
 
